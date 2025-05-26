@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply text-base;
+  }
+  
+  body {
+    @apply bg-white text-doj-brown font-serif leading-relaxed;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif font-bold;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply px-4 py-2 text-white hover:bg-doj-gold/20 transition-colors duration-200;
+  }
+
+  .nav-link.active {
+    @apply bg-doj-gold/30;
+  }
+
+  .department-card {
+    @apply bg-doj-tan rounded-lg p-6 shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1;
+  }
+
+  .btn-primary {
+    @apply bg-doj-brown text-white px-6 py-3 rounded-md hover:bg-doj-gold transition-colors duration-200;
+  }
+} 
