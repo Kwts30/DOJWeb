@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Mobile menu toggle
+    // Mobile menu toggle (single instance)
     const menuToggle = document.getElementById('menu-toggle');
     const navLinks = document.getElementById('nav-links');
 
@@ -13,17 +13,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Add active class to current page link
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    const navItems = document.querySelectorAll('.nav-link');
-    
-    navItems.forEach(item => {
-        if (item.getAttribute('href') === currentPage) {
-            item.classList.add('active');
-        }
-    });
+    // Initialize all UI components
+    setActiveNavLink();
+    initializeAnimations();
+    initializeContentVisibility();
+    initializeSmoothScrolling();
+    initializeButtonEffects();
 
-    // Intersection Observer for animations
+    // Add error handling wrapper
+    try {
+        // Add scroll event listener for card animations
+        window.addEventListener('scroll', revealDojInfoCards);
+        revealDojInfoCards(); // Call once on load
+    } catch (error) {
+        handleError(error);
+    }
+});
+
+// Animation initialization
+function initializeAnimations() {
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
@@ -52,37 +60,116 @@ document.addEventListener('DOMContentLoaded', () => {
             card.classList.add('visible');
         }, 200 + i * 250);
     });
+}
 
-    // DOJ Infographic Card Fade-in Animation (on scroll)
-    function revealDojInfoCards() {
-        const cards = document.querySelectorAll('.doj-info-card-fade');
-        const trigger = window.innerHeight * 0.92;
-        cards.forEach(card => {
-            const rect = card.getBoundingClientRect();
-            if (rect.top < trigger) {
-                card.classList.add('visible');
+// Content visibility initialization
+function initializeContentVisibility() {
+    // Initialize documents section
+    initializeSection(
+        document.querySelectorAll('.doc-title-content'),
+        document.querySelectorAll('.doc-title-btn')
+    );
+
+    // Initialize rules section
+    initializeSection(
+        document.querySelectorAll('.rules-title-content'),
+        document.querySelectorAll('.rules-title-btn')
+    );
+}
+
+// Generic section initialization
+function initializeSection(contents, buttons) {
+    if (!contents.length || !buttons.length) return;
+
+    // Show first content and activate first button
+    contents[0].classList.remove('hidden');
+    buttons[0].classList.remove('bg-[#d2bb8a]');
+    buttons[0].classList.add('bg-[#c2a96e]');
+
+    // Add click handlers
+    buttons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Update button states
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-[#c2a96e]');
+                btn.classList.add('bg-[#d2bb8a]');
+            });
+
+            button.classList.remove('bg-[#d2bb8a]');
+            button.classList.add('bg-[#c2a96e]');
+
+            // Hide all content sections
+            contents.forEach(content => content.classList.add('hidden'));
+
+            // Show selected content with transition
+            const targetContent = document.getElementById(button.getAttribute('data-title'));
+            if (targetContent) {
+                targetContent.classList.remove('hidden');
+                addTransitionEffects(targetContent);
             }
         });
-    }
+    });
+}
 
-    // Add scroll event listener for card animations
-    window.addEventListener('scroll', revealDojInfoCards);
-    window.addEventListener('DOMContentLoaded', revealDojInfoCards);
-
-    // Add active state to current navigation link
-    function setActiveNavLink() {
-        const currentPath = window.location.pathname;
-        const navLinks = document.querySelectorAll('.nav-link');
-        
-        navLinks.forEach(link => {
-            if (link.getAttribute('href') === currentPath.split('/').pop()) {
-                link.classList.add('active');
-            } else {
-                link.classList.remove('active');
+function initializeSmoothScrolling() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
             }
         });
-    }
+    });
+}
 
-    // Call setActiveNavLink on page load
-    document.addEventListener('DOMContentLoaded', setActiveNavLink);
-}); 
+function initializeButtonEffects() {
+    document.querySelectorAll('button').forEach(button => {
+        button.addEventListener('mouseenter', () => {
+            button.style.transition = 'all 0.3s ease';
+        });
+    });
+}
+
+// Active navigation link handling
+function setActiveNavLink() {
+    const currentPath = window.location.pathname;
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    navLinks.forEach(link => {
+        if (link.getAttribute('href') === currentPath.split('/').pop()) {
+            link.classList.add('active');
+        } else {
+            link.classList.remove('active');
+        }
+    });
+}
+
+// DOJ Infographic Card Fade-in Animation (on scroll)
+function revealDojInfoCards() {
+    const cards = document.querySelectorAll('.doj-info-card-fade');
+    const trigger = window.innerHeight * 0.92;
+    cards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        if (rect.top < trigger) {
+            card.classList.add('visible');
+        }
+    });
+}
+
+// Transition effects for content changes
+function addTransitionEffects(content) {
+    content.style.opacity = '0';
+    setTimeout(() => {
+        content.style.transition = 'opacity 0.3s ease-in-out';
+        content.style.opacity = '1';
+    }, 50);
+}
+
+// Error handling
+function handleError(error) {
+    console.error('Error in DOJ System:', error);
+}
