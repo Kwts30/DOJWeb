@@ -61,74 +61,312 @@
     <!-- Main Content -->
     <main class="flex-grow bg-neutral-900">
         <section class="relative min-h-screen flex items-start overflow-hidden">
-            <!-- Sidebar: GitHub Docs style -->
-            <aside class="hidden md:flex flex-col w-64 bg-[#d2bb8a] border-r border-neutral-700 min-h-screen py-6 px-0 sticky top-0 z-20">
-                <div class="flex flex-col items-center mb-6">
-                    <img src="assets/doj-seal.png" alt="Department of Justice Seal" class="h-20 w-20 mb-2">
-                    <h2 class="text-lg font-bold text-center text-black">Staff</h2>
-                </div>
-                <nav class="flex flex-col gap-0 w-full">
-                    <button class="staff-title-btn w-full text-left px-4 py-2 bg-[#d2bb8a] text-black font-normal border-none rounded-none hover:bg-[#c2a96e] focus:bg-[#c2a96e] transition-colors" data-title="staff1">Staff 1: Crimes Against the State</button>
-                    <button class="staff-title-btn w-full text-left px-4 py-2 bg-[#d2bb8a] text-black font-normal border-none rounded-none hover:bg-[#c2a96e] focus:bg-[#c2a96e] transition-colors" data-title="staff2">Staff 2: Crimes Against the State</button>
-                    <button class="staff-title-btn w-full text-left px-4 py-2 bg-[#d2bb8a] text-black font-normal border-none rounded-none hover:bg-[#c2a96e] focus:bg-[#c2a96e] transition-colors" data-title="staff3">Staff 3: Crimes Against the State</button>
-                    <button class="staff-title-btn w-full text-left px-4 py-2 bg-[#d2bb8a] text-black font-normal border-none rounded-none hover:bg-[#c2a96e] focus:bg-[#c2a96e] transition-colors" data-title="staff4">Staff 4: Crimes Against the State</button>
-                    <button class="staff-title-btn w-full text-left px-4 py-2 bg-[#d2bb8a] text-black font-normal border-none rounded-none hover:bg-[#c2a96e] focus:bg-[#c2a96e] transition-colors" data-title="staff5">Staff 5: Crimes Against the State</button>
-                    <button class="staff-title-btn w-full text-left px-4 py-2 bg-[#d2bb8a] text-black font-normal border-none rounded-none hover:bg-[#c2a96e] focus:bg-[#c2a96e] transition-colors" data-title="staff6">Staff 6: Crimes Against the State</button>
-                    <button class="staff-title-btn w-full text-left px-4 py-2 bg-[#d2bb8a] text-black font-normal border-none rounded-none hover:bg-[#c2a96e] focus:bg-[#c2a96e] transition-colors" data-title="staff7">Staff 7: Crimes Against the State</button>
-                    <button class="staff-title-btn w-full text-left px-4 py-2 bg-[#d2bb8a] text-black font-normal border-none rounded-none hover:bg-[#c2a96e] focus:bg-[#c2a96e] transition-colors" data-title="staff8">Staff 8: Crimes Against the State</button>
-                    <button class="staff-title-btn w-full text-left px-4 py-2 bg-[#d2bb8a] text-black font-normal border-none rounded-none hover:bg-[#c2a96e] focus:bg-[#c2a96e] transition-colors" data-title="staff9">Staff 9: Crimes Against the State</button>
-                    <button class="staff-title-btn w-full text-left px-4 py-2 bg-[#d2bb8a] text-black font-normal border-none rounded-none hover:bg-[#c2a96e] focus:bg-[#c2a96e] transition-colors" data-title="staff10">Staff 10: Crimes Against the State</button>
-                    <button class="staff-title-btn w-full text-left px-4 py-2 bg-[#d2bb8a] text-black font-normal border-none rounded-none hover:bg-[#c2a96e] focus:bg-[#c2a96e] transition-colors" data-title="staff11">Staff 11: Crimes Against the State</button>
-                </nav>
-            </aside>
 
             <!-- Content Area: large documentation section -->
-            <div class="flex-1 bg-white text-neutral-900 py-8 min-h-screen">
-                <div class="w-full mx-0 p-8">
-                    <div id="staff1" class="staff-title-content">
-                        <h3 class="text-3xl font-bold mb-4 text-black text-center w-full">Staff 1: Crimes Against the State</h3>
-                        <p class="mx-auto text-center max-w-3xl">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, nisi eu consectetur.</p>
+            <div class="flex-1 bg-gradient-to-br from-white to-gray-100 text-neutral-900 py-8 min-h-screen">
+                <div class="w-full mx-auto max-w-7xl p-8">
+                    <!-- Judicial Branch Section -->
+                    <section class="mb-20 transform transition-all duration-500 hover:scale-[1.02]">
+                        <h2 class="text-4xl font-bold text-center mb-16 relative">
+                            <span class="bg-clip-text text-transparent bg-gradient-to-r from-doj-brown to-[#2c1810]">Judicial Branch</span>
+                            <div class="absolute w-24 h-1 bg-[#d2bb8a] bottom-0 left-1/2 transform -translate-x-1/2 mt-2"></div>
+                        </h2>
+                        
+                        <div class="grid grid-cols-1 gap-8">
+                            <!-- Chief Justice - Centered -->
+                            <div class="flex justify-center mb-12">
+                                <div class="flex flex-col items-center group">
+                                    <div class="relative w-56 h-56 rounded-full overflow-hidden mb-4 border-4 border-[#d2bb8a] 
+                                              transform transition-all duration-500 hover:scale-105 hover:shadow-2xl
+                                              group-hover:border-[#2c1810] ring-4 ring-offset-4 ring-[#d2bb8a]/30">
+                                        <img src="assets/chiefjustice.png" alt="Chief Justice" 
+                                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                        <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                                    </div>
+                                    <h3 class="text-3xl font-bold text-doj-brown group-hover:text-[#2c1810] transition-colors duration-300">Hon. Kawatskie Delos Reyes</h3>
+                                    <p class="text-xl text-gray-600 font-medium tracking-wide group-hover:text-[#d2bb8a] transition-colors duration-300">Chief of Justice</p>
+                                </div>
+                            </div>
+
+                            <!-- Other Positions - Grid Layout -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
+                                <!-- Associate Justice -->
+                                <div class="flex flex-col items-center group">
+                                    <div class="relative w-40 h-40 rounded-full overflow-hidden mb-4 border-4 border-[#d2bb8a] 
+                                              transform transition-all duration-500 hover:scale-105 hover:shadow-xl
+                                              group-hover:border-[#2c1810]">
+                                        <img src="assets/placeholder.png" alt="Associate Justice" 
+                                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                        <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-doj-brown group-hover:text-[#2c1810] transition-colors duration-300">Name Here</h3>
+                                    <p class="text-gray-600 font-medium tracking-wide group-hover:text-[#d2bb8a] transition-colors duration-300">Associate Justice</p>
+                                </div>
+
+                                <!-- Head Judge -->
+                                <div class="flex flex-col items-center group">
+                                    <div class="relative w-40 h-40 rounded-full overflow-hidden mb-4 border-4 border-[#d2bb8a] 
+                                              transform transition-all duration-500 hover:scale-105 hover:shadow-xl
+                                              group-hover:border-[#2c1810]">
+                                        <img src="assets/placeholder.png" alt="Head Judge" 
+                                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                        <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-doj-brown group-hover:text-[#2c1810] transition-colors duration-300">Name Here</h3>
+                                    <p class="text-gray-600 font-medium tracking-wide group-hover:text-[#d2bb8a] transition-colors duration-300">Head Judge</p>
+                                </div>
+
+                                <!-- Associate Judge -->
+                                <div class="flex flex-col items-center group">
+                                    <div class="relative w-40 h-40 rounded-full overflow-hidden mb-4 border-4 border-[#d2bb8a] 
+                                              transform transition-all duration-500 hover:scale-105 hover:shadow-xl
+                                              group-hover:border-[#2c1810]">
+                                        <img src="assets/placeholder.png" alt="Associate Judge" 
+                                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                        <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-doj-brown group-hover:text-[#2c1810] transition-colors duration-300">Name Here</h3>
+                                    <p class="text-gray-600 font-medium tracking-wide group-hover:text-[#d2bb8a] transition-colors duration-300">Associate Judge</p>
+                                </div>
+
+                                <!-- Court Judge -->
+                                <div class="flex flex-col items-center group">
+                                    <div class="relative w-40 h-40 rounded-full overflow-hidden mb-4 border-4 border-[#d2bb8a] 
+                                              transform transition-all duration-500 hover:scale-105 hover:shadow-xl
+                                              group-hover:border-[#2c1810]">
+                                        <img src="assets/placeholder.png" alt="Court Judge" 
+                                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                        <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-doj-brown group-hover:text-[#2c1810] transition-colors duration-300">Name Here</h3>
+                                    <p class="text-gray-600 font-medium tracking-wide group-hover:text-[#d2bb8a] transition-colors duration-300">Court Judge</p>
+                                </div>
+                                <!-- Repeat for other positions (Head Judge, Associate Judge, Court Judge) -->
+                                <!-- Copy the above div structure for each position -->
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Add decorative elements between sections -->
+                    <div class="flex items-center justify-center my-16">
+                        <div class="h-px w-32 bg-gradient-to-r from-transparent via-[#d2bb8a] to-transparent"></div>
+                        <div class="mx-4">
+                            <img src="assets/doj-seal.png" alt="Separator" class="w-8 h-8 opacity-50">
+                        </div>
+                        <div class="h-px w-32 bg-gradient-to-r from-transparent via-[#d2bb8a] to-transparent"></div>
                     </div>
-                    <div id="staff2" class="staff-title-content hidden">
-                        <h3 class="text-3xl font-bold mb-4 text-black text-center w-full">Staff 2: Crimes Against the State</h3>
-                        <p class="mx-auto text-center max-w-3xl">Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+
+                    <!-- District Attorney's Office Section -->
+                    <section class="mb-20 transform transition-all duration-500 hover:scale-[1.02]">
+                        <h2 class="text-4xl font-bold text-center mb-16 relative">
+                            <span class="bg-clip-text text-transparent bg-gradient-to-r from-doj-brown to-[#2c1810]">District Attorney's Office</span>
+                            <div class="absolute w-24 h-1 bg-[#d2bb8a] bottom-0 left-1/2 transform -translate-x-1/2 mt-2"></div>
+                        </h2>
+                        
+                        <!-- Similar structure as above, with District Attorney in center -->
+                        <div class="grid grid-cols-1 gap-8">
+                            <!-- District Attorney - Centered -->
+                            <div class="flex justify-center mb-12">
+                                <div class="flex flex-col items-center group">
+                                    <div class="relative w-56 h-56 rounded-full overflow-hidden mb-4 border-4 border-[#d2bb8a] 
+                                              transform transition-all duration-500 hover:scale-105 hover:shadow-2xl
+                                              group-hover:border-[#2c1810] ring-4 ring-offset-4 ring-[#d2bb8a]/30">
+                                        <img src="assets/placeholder.png" alt="District Attorney" 
+                                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                        <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                                    </div>
+                                    <h3 class="text-3xl font-bold text-doj-brown group-hover:text-[#2c1810] transition-colors duration-300">Name Here</h3>
+                                    <p class="text-xl text-gray-600 font-medium tracking-wide group-hover:text-[#d2bb8a] transition-colors duration-300">District Attorney</p>
+                                </div>
+                            </div>
+
+                            <!-- Other Positions - Grid Layout -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
+                                <!-- Assistant District Attorney -->
+                                <div class="flex flex-col items-center group">
+                                    <div class="relative w-40 h-40 rounded-full overflow-hidden mb-4 border-4 border-[#d2bb8a] 
+                                              transform transition-all duration-500 hover:scale-105 hover:shadow-xl
+                                              group-hover:border-[#2c1810]">
+                                        <img src="assets/placeholder.png" alt="Assistant District Attorney" 
+                                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                        <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-doj-brown group-hover:text-[#2c1810] transition-colors duration-300">Name Here</h3>
+                                    <p class="text-gray-600 font-medium tracking-wide group-hover:text-[#d2bb8a] transition-colors duration-300">Assistant District Attorney</p>
+                                </div>
+
+                                <!-- Senior Prosecutor -->
+                                <div class="flex flex-col items-center group">
+                                    <div class="relative w-40 h-40 rounded-full overflow-hidden mb-4 border-4 border-[#d2bb8a] 
+                                              transform transition-all duration-500 hover:scale-105 hover:shadow-xl
+                                              group-hover:border-[#2c1810]">
+                                        <img src="assets/placeholder.png" alt="Senior Prosecutor" 
+                                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                        <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-doj-brown group-hover:text-[#2c1810] transition-colors duration-300">Name Here</h3>
+                                    <p class="text-gray-600 font-medium tracking-wide group-hover:text-[#d2bb8a] transition-colors duration-300">Senior Prosecutor</p>
+                                </div>
+
+                                <!-- Prosecutor -->
+                                <div class="flex flex-col items-center group">
+                                    <div class="relative w-40 h-40 rounded-full overflow-hidden mb-4 border-4 border-[#d2bb8a] 
+                                              transform transition-all duration-500 hover:scale-105 hover:shadow-xl
+                                              group-hover:border-[#2c1810]">
+                                        <img src="assets/placeholder.png" alt="Prosecutor" 
+                                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                        <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-doj-brown group-hover:text-[#2c1810] transition-colors duration-300">Name Here</h3>
+                                    <p class="text-gray-600 font-medium tracking-wide group-hover:text-[#d2bb8a] transition-colors duration-300">Prosecutor</p>
+                                </div>
+
+                                <!-- Junior Prosecutor -->
+                                <div class="flex flex-col items-center group">
+                                    <div class="relative w-40 h-40 rounded-full overflow-hidden mb-4 border-4 border-[#d2bb8a] 
+                                              transform transition-all duration-500 hover:scale-105 hover:shadow-xl
+                                              group-hover:border-[#2c1810]">
+                                        <img src="assets/placeholder.png" alt="Junior Prosecutor" 
+                                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                        <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-doj-brown group-hover:text-[#2c1810] transition-colors duration-300">Name Here</h3>
+                                    <p class="text-gray-600 font-medium tracking-wide group-hover:text-[#d2bb8a] transition-colors duration-300">Junior Prosecutor</p>
+                                </div>
+
+                                <!-- Repeat for other positions (Senior DA, Junior DA, DA Intern) -->
+                                <!-- Copy the above div structure for each position -->
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Add decorative elements between sections -->
+                    <div class="flex items-center justify-center my-16">
+                        <div class="h-px w-32 bg-gradient-to-r from-transparent via-[#d2bb8a] to-transparent"></div>
+                        <div class="mx-4">
+                            <img src="assets/da-logo.png" alt="Separator" class="w-8 h-8 opacity-50">
+                        </div>
+                        <div class="h-px w-32 bg-gradient-to-r from-transparent via-[#d2bb8a] to-transparent"></div>
                     </div>
-                    <div id="staff3" class="staff-title-content hidden">
-                        <h3 class="text-3xl font-bold mb-4 text-black text-center w-full">Staff 3: Crimes Against the State</h3>
-                        <p class="mx-auto text-center max-w-3xl">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.</p>
+
+                    <!-- Public Defender's Office Section -->
+                    <section class="mb-20 transform transition-all duration-500 hover:scale-[1.02]">
+                        <h2 class="text-4xl font-bold text-center mb-16 relative">
+                            <span class="bg-clip-text text-transparent bg-gradient-to-r from-doj-brown to-[#2c1810]">Public Defender's Office</span>
+                            <div class="absolute w-24 h-1 bg-[#d2bb8a] bottom-0 left-1/2 transform -translate-x-1/2 mt-2"></div>
+                        </h2>
+                        
+                        <!-- Similar structure as above, with Public Defender in center -->
+                        <div class="grid grid-cols-1 gap-8">
+                            <!-- Chief Defender - Centered -->
+                            <div class="flex justify-center mb-12">
+                                <div class="flex flex-col items-center group">
+                                    <div class="relative w-56 h-56 rounded-full overflow-hidden mb-4 border-4 border-[#d2bb8a] 
+                                              transform transition-all duration-500 hover:scale-105 hover:shadow-2xl
+                                              group-hover:border-[#2c1810] ring-4 ring-offset-4 ring-[#d2bb8a]/30">
+                                        <img src="assets/placeholder.png" alt="Chief Defender" 
+                                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                        <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                                    </div>
+                                    <h3 class="text-3xl font-bold text-doj-brown group-hover:text-[#2c1810] transition-colors duration-300">Name Here</h3>
+                                    <p class="text-xl text-gray-600 font-medium tracking-wide group-hover:text-[#d2bb8a] transition-colors duration-300">Chief Defender</p>
+                                </div>
+                            </div>
+
+                            <!-- Other Positions - Grid Layout -->
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-8">
+                                <!-- Deputy Chief -->
+                                <div class="flex flex-col items-center group">
+                                    <div class="relative w-40 h-40 rounded-full overflow-hidden mb-4 border-4 border-[#d2bb8a] 
+                                              transform transition-all duration-500 hover:scale-105 hover:shadow-xl
+                                              group-hover:border-[#2c1810]">
+                                        <img src="assets/placeholder.png" alt="Deputy Chief" 
+                                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                        <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-doj-brown group-hover:text-[#2c1810] transition-colors duration-300">Name Here</h3>
+                                    <p class="text-gray-600 font-medium tracking-wide group-hover:text-[#d2bb8a] transition-colors duration-300">Deputy Chief</p>
+                                </div>
+
+                                <!-- Senior Public Defender -->
+                                <div class="flex flex-col items-center group">
+                                    <div class="relative w-40 h-40 rounded-full overflow-hidden mb-4 border-4 border-[#d2bb8a] 
+                                              transform transition-all duration-500 hover:scale-105 hover:shadow-xl
+                                              group-hover:border-[#2c1810]">
+                                        <img src="assets/placeholder.png" alt="Senior Public Defender" 
+                                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                        <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-doj-brown group-hover:text-[#2c1810] transition-colors duration-300">Name Here</h3>
+                                    <p class="text-gray-600 font-medium tracking-wide group-hover:text-[#d2bb8a] transition-colors duration-300">Senior Public Defender</p>
+                                </div>
+
+                                <!-- Public Defender -->
+                                <div class="flex flex-col items-center group">
+                                    <div class="relative w-40 h-40 rounded-full overflow-hidden mb-4 border-4 border-[#d2bb8a] 
+                                              transform transition-all duration-500 hover:scale-105 hover:shadow-xl
+                                              group-hover:border-[#2c1810]">
+                                        <img src="assets/placeholder.png" alt="Public Defender" 
+                                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                        <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-doj-brown group-hover:text-[#2c1810] transition-colors duration-300">Name Here</h3>
+                                    <p class="text-gray-600 font-medium tracking-wide group-hover:text-[#d2bb8a] transition-colors duration-300">Public Defender</p>
+                                </div>
+
+                                <!-- Junior Public Defender -->
+                                <div class="flex flex-col items-center group">
+                                    <div class="relative w-40 h-40 rounded-full overflow-hidden mb-4 border-4 border-[#d2bb8a] 
+                                              transform transition-all duration-500 hover:scale-105 hover:shadow-xl
+                                              group-hover:border-[#2c1810]">
+                                        <img src="assets/placeholder.png" alt="Junior Public Defender" 
+                                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                        <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-doj-brown group-hover:text-[#2c1810] transition-colors duration-300">Name Here</h3>
+                                    <p class="text-gray-600 font-medium tracking-wide group-hover:text-[#d2bb8a] transition-colors duration-300">Junior Public Defender</p>
+                                </div>
+
+                                <!-- Paralegal -->
+                                <div class="flex flex-col items-center group">
+                                    <div class="relative w-40 h-40 rounded-full overflow-hidden mb-4 border-4 border-[#d2bb8a] 
+                                              transform transition-all duration-500 hover:scale-105 hover:shadow-xl
+                                              group-hover:border-[#2c1810]">
+                                        <img src="assets/placeholder.png" alt="Paralegal" 
+                                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                        <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-doj-brown group-hover:text-[#2c1810] transition-colors duration-300">Name Here</h3>
+                                    <p class="text-gray-600 font-medium tracking-wide group-hover:text-[#d2bb8a] transition-colors duration-300">Paralegal</p>
+                                </div>
+                                
+                                <!-- Legal Assistant -->
+                                <div class="flex flex-col items-center group">
+                                    <div class="relative w-40 h-40 rounded-full overflow-hidden mb-4 border-4 border-[#d2bb8a] 
+                                              transform transition-all duration-500 hover:scale-105 hover:shadow-xl
+                                              group-hover:border-[#2c1810]">
+                                        <img src="assets/placeholder.png" alt="Legal Assistant" 
+                                             class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                                        <div class="absolute inset-0 bg-black opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-doj-brown group-hover:text-[#2c1810] transition-colors duration-300">Name Here</h3>
+                                    <p class="text-gray-600 font-medium tracking-wide group-hover:text-[#d2bb8a] transition-colors duration-300">Legal Assistant</p>
+                                </div>
+
+                                <!-- Repeat for other positions (Senior PD, Junior PD, PD Intern) -->
+                                <!-- Copy the above div structure for each position -->
+                            </div>
+                        </div>
+                    </section>
+
+                    <div class="flex items-center justify-center my-16">
+                        <div class="h-px w-32 bg-gradient-to-r from-transparent via-[#d2bb8a] to-transparent"></div>
+                        <div class="mx-4">
+                            <img src="assets/public-attorney-logo.png" alt="Separator" class="w-8 h-8 opacity-50">
+                        </div>
+                        <div class="h-px w-32 bg-gradient-to-r from-transparent via-[#d2bb8a] to-transparent"></div>
                     </div>
-                    <div id="staff4" class="staff-title-content hidden">
-                        <h3 class="text-3xl font-bold mb-4 text-black text-center w-full">Staff 4: Crimes Against the State</h3>
-                        <p class="mx-auto text-center max-w-3xl">Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
-                    </div>
-                    <div id="staff5" class="staff-title-content hidden">
-                        <h3 class="text-3xl font-bold mb-4 text-black text-center w-full">Staff 5: Crimes Against the State</h3>
-                        <p class="mx-auto text-center max-w-3xl">Sed nisi. Nulla quis sem at nibh elementum imperdiet.</p>
-                    </div>
-                    <div id="staff6" class="staff-title-content hidden">
-                        <h3 class="text-3xl font-bold mb-4 text-black text-center w-full">Staff 6: Crimes Against the State</h3>
-                        <p class="mx-auto text-center max-w-3xl">Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta.</p>
-                    </div>
-                    <div id="staff7" class="staff-title-content hidden">
-                        <h3 class="text-3xl font-bold mb-4 text-black text-center w-full">Staff 7: Crimes Against the State</h3>
-                        <p class="mx-auto text-center max-w-3xl">Mauris massa. Vestibulum lacinia arcu eget nulla.</p>
-                    </div>
-                    <div id="staff8" class="staff-title-content hidden">
-                        <h3 class="text-3xl font-bold mb-4 text-black text-center w-full">Staff 8: Crimes Against the State</h3>
-                        <p class="mx-auto text-center max-w-3xl">Class aptent taciti sociosqu ad litora torquent per conubia nostra.</p>
-                    </div>
-                    <div id="staff9" class="staff-title-content hidden">
-                        <h3 class="text-3xl font-bold mb-4 text-black text-center w-full">Staff 9: Crimes Against the State</h3>
-                        <p class="mx-auto text-center max-w-3xl">Inceptos himenaeos. Curabitur sodales ligula in libero.</p>
-                    </div>
-                    <div id="staff10" class="staff-title-content hidden">
-                        <h3 class="text-3xl font-bold mb-4 text-black text-center w-full">Staff 10: Crimes Against the State</h3>
-                        <p class="mx-auto text-center max-w-3xl">Sed dignissim lacinia nunc. Curabitur tortor.</p>
-                    </div>
-                    <div id="staff11" class="staff-title-content hidden">
-                        <h3 class="text-3xl font-bold mb-4 text-black text-center w-full">Staff 11: Crimes Against the State</h3>
-                        <p class="mx-auto text-center max-w-3xl">Pellentesque nibh. Aenean quam. In scelerisque sem at dolor.</p>
-                    </div>
+
                 </div>
             </div>
         </section>
