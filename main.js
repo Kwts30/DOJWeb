@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeContentVisibility();
     initializeSmoothScrolling();
     initializeButtonEffects();
+    initializePenalCodeNavigation(); // Add this line
 
     // Add error handling wrapper
     try {
@@ -172,4 +173,46 @@ function addTransitionEffects(content) {
 // Error handling
 function handleError(error) {
     console.error('Error in DOJ System:', error);
+}
+
+// Penal Code Navigation
+function initializePenalCodeNavigation() {
+    const penalButtons = document.querySelectorAll('[data-penal-title]');
+    const penalContents = document.querySelectorAll('.penal-title-content');
+
+    if (!penalButtons.length || !penalContents.length) return;
+
+    // Show first content by default
+    penalContents[0].classList.remove('hidden');
+    if (penalButtons[0]) {
+        penalButtons[0].classList.add('bg-[#c2a96e]');
+        penalButtons[0].classList.remove('bg-[#d2bb8a]');
+    }
+
+    penalButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Update button states
+            penalButtons.forEach(btn => {
+                btn.classList.remove('bg-[#c2a96e]');
+                btn.classList.add('bg-[#d2bb8a]');
+            });
+
+            // Activate clicked button
+            button.classList.remove('bg-[#d2bb8a]');
+            button.classList.add('bg-[#c2a96e]');
+
+            // Hide all content sections
+            penalContents.forEach(content => {
+                content.classList.add('hidden');
+            });
+
+            // Show selected content with transition
+            const targetId = button.getAttribute('data-penal-title');
+            const targetContent = document.getElementById(targetId);
+            if (targetContent) {
+                targetContent.classList.remove('hidden');
+                addTransitionEffects(targetContent);
+            }
+        });
+    });
 }
