@@ -348,6 +348,7 @@ input:where([type='button']),
 input:where([type='reset']),
 input:where([type='submit']) {
   -webkit-appearance: button;
+  appearance: button;
   /* 1 */
   background-color: transparent;
   /* 2 */
@@ -395,6 +396,7 @@ Correct the cursor style of increment and decrement buttons in Safari.
 
 [type='search'] {
   -webkit-appearance: textfield;
+  appearance: textfield;
   /* 1 */
   outline-offset: -2px;
   /* 2 */
@@ -415,6 +417,7 @@ Remove the inner padding in Chrome and Safari on macOS.
 
 ::-webkit-file-upload-button {
   -webkit-appearance: button;
+  appearance: button;
   /* 1 */
   font: inherit;
   /* 2 */
@@ -832,6 +835,7 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
   -webkit-box-orient: horizontal;
   -webkit-line-clamp: none;
+  line-clamp: none;
 }
 
 .block {
@@ -3019,6 +3023,7 @@ body {
 
 /* Mobile Navigation */
 @media (max-width: 768px) {
+   
     #nav-links {
         position: absolute;
         top: 100%;
@@ -3056,4 +3061,157 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
     background: #1a0f0a;
+}
+
+/* Hamburger Menu Styles */
+.hamburger-icon {
+    display: flex;
+    flex-direction: column;
+    width: 24px;
+    height: 18px;
+    position: relative;
+}
+
+.hamburger-line {
+    display: block;
+    height: 2px;
+    background-color: white;
+    border-radius: 1px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+}
+
+.hamburger-line:nth-child(1) {
+    margin-bottom: 6px;
+    width: 100%;
+}
+
+.hamburger-line:nth-child(2) {
+    margin-bottom: 6px;
+    width: 80%;
+    margin-left: auto;
+}
+
+.hamburger-line:nth-child(3) {
+    width: 100%;
+}
+
+/* Hamburger Animation - Active State */
+.hamburger-icon.active .hamburger-line:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.hamburger-icon.active .hamburger-line:nth-child(2) {
+    opacity: 0;
+    transform: translateX(20px);
+}
+
+.hamburger-icon.active .hamburger-line:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* Mobile Menu Styles */
+#mobile-menu {
+    backdrop-filter: blur(10px);
+}
+
+#mobile-menu.open {
+    transform: translateX(0);
+}
+
+#menu-overlay.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Menu Link Animations */
+.menu-link {
+    transform: translateX(30px);
+    opacity: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#mobile-menu.open .menu-link {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+#mobile-menu.open .menu-link:nth-child(1) { transition-delay: 0.1s; }
+#mobile-menu.open .menu-link:nth-child(2) { transition-delay: 0.15s; }
+#mobile-menu.open .menu-link:nth-child(3) { transition-delay: 0.2s; }
+#mobile-menu.open .menu-link:nth-child(4) { transition-delay: 0.25s; }
+#mobile-menu.open .menu-link:nth-child(5) { transition-delay: 0.3s; }
+
+/* Menu Link Active State */
+.menu-link.active {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-left: 3px solid #feeaba;
+}
+
+/* Penal Codes Search and Filter Animations */
+.animate-fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.grid-updating {
+    transition: all 0.3s ease-in-out;
+}
+
+.no-results-message {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Enhanced search input and filter styles */
+#penalCodeSearch:focus,
+#codeFilter:focus {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
+}
+
+/* Card hover effects for better interaction feedback */
+.penal-code-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.penal-code-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Court Decorum Tab Styles */
+.tab-btn {
+    background: white;
+    color: #6b7280;
+    transition: all 0.3s ease;
+}
+
+.tab-btn.active {
+    background: linear-gradient(135deg, #1e40af, #3b82f6);
+    color: white;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+.tab-btn:hover:not(.active) {
+    background: #f3f4f6;
+    color: #374151;
+}
+
+.content-section {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.content-section.hidden {
+    display: none !important;
 }

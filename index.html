@@ -21,41 +21,100 @@
         }
     </script>
 </head>
-<body class="min-h-screen flex flex-col bg-gray-50">
-    <!-- Header -->
-    <header class="bg-gradient-to-r from-doj-brown to-[#2c1810] text-white shadow-lg">
-        <div class="container mx-auto px-4 py-4">
-            <div class="flex flex-col md:flex-row items-center justify-between">
-                <div class="flex items-center space-x-4">
-                    <img src="assets/doj-seal.png" alt="Department of Justice Seal" class="h-16 w-16 hover:scale-105 transition-transform">
-                    <img src="assets/city-seal.webp" alt="City of Los Santos Seal" class="h-16 w-16 hover:scale-105 transition-transform">
-                    <div class="ml-4">
-                        <h1 class="text-2xl md:text-3xl font-bold mb-1 tracking-tight">DEPARTMENT OF JUSTICE</h1>
-                        <p class="text-sm md:text-base text-gray-200">City of Los Santos | State of San Andreas</p>
+<body class="min-h-screen flex flex-col bg-gray-50">    <!-- Header -->
+    <header class="bg-gradient-to-r from-doj-brown to-[#2c1810] text-white shadow-lg relative">
+        <div class="container mx-auto px-6 py-6">
+            <div class="flex items-center justify-between">
+                <!-- Left Spacer -->
+                <div class="w-16"></div>
+                
+                <!-- Center Content - Logos and Department Info -->
+                <div class="flex items-center justify-center space-x-6">
+                    <img src="assets/doj-seal.png" alt="Department of Justice Seal" class="h-20 w-20 hover:scale-105 transition-transform duration-300 drop-shadow-lg">
+                    <div class="text-center">
+                        <h1 class="text-2xl md:text-4xl font-bold mb-1 tracking-tight font-serif">DEPARTMENT OF JUSTICE</h1>
+                        <p class="text-sm md:text-lg text-gray-200 font-medium">City of Los Santos | State of San Andreas</p>
                     </div>
+                    <img src="assets/city-seal.webp" alt="City of Los Santos Seal" class="h-20 w-20 hover:scale-105 transition-transform duration-300 drop-shadow-lg">
+                </div>
+                
+                <!-- Right - Hamburger Menu -->
+                <div class="relative">
+                    <button class="p-3 rounded-lg hover:bg-white/10 transition-all duration-300 group" id="menu-toggle">
+                        <div class="hamburger-icon">
+                            <span class="hamburger-line"></span>
+                            <span class="hamburger-line"></span>
+                            <span class="hamburger-line"></span>
+                        </div>
+                    </button>
                 </div>
             </div>
         </div>
         
-        <!-- Navigation -->
-        <nav class="bg-black/20 backdrop-blur-md border-t border-white/10">
-            <div class="container mx-auto px-4">
-                <div class="flex flex-col md:flex-row items-center">
-                    <button class="md:hidden p-4 text-white hover:text-gray-200 transition" id="menu-toggle">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        <!-- Mobile Navigation Menu -->
+        <nav class="fixed top-0 right-0 h-full w-80 bg-gradient-to-b from-doj-brown to-[#1a0f08] transform translate-x-full transition-transform duration-300 z-50 shadow-2xl" id="mobile-menu">
+            <div class="p-6">
+                <!-- Menu Header -->
+                <div class="flex items-center justify-between mb-8">
+                    <div class="flex items-center space-x-3">
+                        <img src="assets/doj-seal.png" alt="DOJ Seal" class="h-12 w-12">
+                        <div>
+                            <h3 class="text-lg font-bold text-white font-serif">DOJ</h3>
+                            <p class="text-xs text-gray-300">Los Santos</p>
+                        </div>
+                    </div>
+                    <button class="p-2 rounded-lg hover:bg-white/10 transition-colors" id="menu-close">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                         </svg>
                     </button>
-                    <div class="hidden md:flex space-x-1" id="nav-links">
-                        <a href="index.html" class="nav-link active px-4 py-3 text-white hover:bg-white/10 transition rounded-lg">Home</a>
-                        <a href="documents.html" class="nav-link px-4 py-3 text-white hover:bg-white/10 transition rounded-lg">Documents</a>
-                        <a href="penal-codes.html" class="nav-link px-4 py-3 text-white hover:bg-white/10 transition rounded-lg">Penal Codes</a>
-                        <a href="rules.html" class="nav-link px-4 py-3 text-white hover:bg-white/10 transition rounded-lg">Rules</a>
-                        <a href="staff.html" class="nav-link px-4 py-3 text-white hover:bg-white/10 transition rounded-lg">Staff</a>
+                </div>
+                
+                <!-- Navigation Links -->
+                <div class="space-y-2">
+                    <a href="index.html" class="menu-link active flex items-center space-x-3 px-4 py-4 rounded-xl text-white hover:bg-white/10 transition-all duration-300 group">
+                        <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+                        </svg>
+                        <span class="font-semibold">Home</span>                    </a>
+                    <a href="memorandums/memorandums.html" class="menu-link flex items-center space-x-3 px-4 py-4 rounded-xl text-white hover:bg-white/10 transition-all duration-300 group">
+                        <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="font-semibold">Memorandums</span>
+                    </a>
+                    <a href="penal-codes.html" class="menu-link flex items-center space-x-3 px-4 py-4 rounded-xl text-white hover:bg-white/10 transition-all duration-300 group">
+                        <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="font-semibold">Penal Codes</span>
+                    </a>
+                    <a href="rules.html" class="menu-link flex items-center space-x-3 px-4 py-4 rounded-xl text-white hover:bg-white/10 transition-all duration-300 group">
+                        <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="font-semibold">Rules</span>
+                    </a>
+                    <a href="staff.html" class="menu-link flex items-center space-x-3 px-4 py-4 rounded-xl text-white hover:bg-white/10 transition-all duration-300 group">
+                        <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/>
+                        </svg>
+                        <span class="font-semibold">Staff</span>
+                    </a>
+                </div>
+                
+                <!-- Menu Footer -->
+                <div class="absolute bottom-6 left-6 right-6">
+                    <div class="border-t border-white/20 pt-4">
+                        <p class="text-xs text-gray-400 text-center">Department of Justice</p>
+                        <p class="text-xs text-gray-500 text-center">Los Santos | San Andreas</p>
                     </div>
                 </div>
             </div>
         </nav>
+        
+        <!-- Overlay -->
+        <div class="fixed inset-0 bg-black/50 opacity-0 invisible transition-all duration-300 z-40" id="menu-overlay"></div>
     </header>
 
     <!-- Main Content -->
@@ -174,41 +233,94 @@
                         <p class="text-base text-center font-serif text-neutral-700 leading-relaxed">Enforces fire safety and extinguishes fires.</p>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <!-- Quick Links Section -->
-        <section class="py-16 w-full bg-gradient-to-r from-doj-brown to-[#2c1810]">
-            <div class="w-full max-w-6xl px-4 mx-auto">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                    <div class="flex flex-col items-center md:items-start">
-                        <h3 class="text-2xl font-bold text-white mb-6 font-serif">Quick Links</h3>
-                        <ul class="space-y-3">
-                            <li><a href="documents.html" class="text-lg text-[#feeaba] hover:text-white transition flex items-center gap-2"><span class="w-2 h-2 bg-[#feeaba] rounded-full"></span>Documents</a></li>
-                            <li><a href="penal-codes.html" class="text-lg text-[#feeaba] hover:text-white transition flex items-center gap-2"><span class="w-2 h-2 bg-[#feeaba] rounded-full"></span>Penal Codes</a></li>
-                            <li><a href="rules.html" class="text-lg text-[#feeaba] hover:text-white transition flex items-center gap-2"><span class="w-2 h-2 bg-[#feeaba] rounded-full"></span>Rules</a></li>
-                            <li><a href="staff.html" class="text-lg text-[#feeaba] hover:text-white transition flex items-center gap-2"><span class="w-2 h-2 bg-[#feeaba] rounded-full"></span>Staff</a></li>
-                        </ul>
+            </div>        </section>
+    </main><!-- Footer -->
+    <footer class="bg-gradient-to-r from-doj-brown to-[#1a0f08] text-white">
+        <div class="container mx-auto px-6 py-12">
+            <!-- Main Footer Content -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- Department Info -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <img src="assets/doj-seal.png" alt="DOJ Seal" class="h-16 w-16">
+                        <div>
+                            <h3 class="text-xl font-bold font-serif text-white">Department of Justice</h3>
+                            <p class="text-[#feeaba] text-sm">City of Los Santos | State of San Andreas</p>
+                        </div>
                     </div>
-                    <div class="flex flex-col items-center md:items-start">
-                        <h3 class="text-2xl font-bold text-white mb-6 font-serif">Connect With Us</h3>
-                        <div class="flex flex-row gap-4">
-                            <a href="#" class="bg-white/10 hover:bg-white/20 rounded-xl p-4 shadow-lg transition transform hover:-translate-y-1">
-                                <img src="assets/Discord-icon.png" alt="Discord" class="w-8 h-8" />
+                    <p class="text-gray-300 text-sm leading-relaxed max-w-md">
+                        Dedicated to upholding justice, protecting rights, and ensuring fair application of the law 
+                        within Los Santos. Serving our community with integrity, transparency, and accountability.
+                    </p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4 font-serif">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-gray-300 hover:text-[#feeaba] transition-colors text-sm">Home</a></li>
+                        <li><a href="memorandums/memorandums.html" class="text-gray-300 hover:text-[#feeaba] transition-colors text-sm">Memorandums</a></li>
+                        <li><a href="penal-codes.html" class="text-gray-300 hover:text-[#feeaba] transition-colors text-sm">Penal Codes</a></li>
+                        <li><a href="rules.html" class="text-gray-300 hover:text-[#feeaba] transition-colors text-sm">Rules</a></li>
+                        <li><a href="staff.html" class="text-gray-300 hover:text-[#feeaba] transition-colors text-sm">Staff Directory</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact & Connect -->
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4 font-serif">Connect With Us</h4>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-4 h-4 text-[#feeaba]" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-300 text-sm">Los Santos, San Andreas</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-4 h-4 text-[#feeaba]" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                            </svg>
+                            <span class="text-gray-300 text-sm">info@losdoj.gov</span>
+                        </div>
+                        <div class="mt-4">
+                            <a href="https://discord.gg/YC8HVgnjbH" class="inline-flex items-center space-x-2 bg-white/10 hover:bg-white/20 rounded-lg px-3 py-2 transition-colors">
+                                <img src="assets/Discord-icon.png" alt="Discord" class="w-7 h-5" />
+                                <span class="text-sm text-white">Join Our Discord</span>
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-black text-white py-8">
-        <div class="container mx-auto px-4 text-center">
-            <p class="text-gray-400">City of Los Santos | State of San Andreas</p>
-            <p class="text-gray-400">&copy; Kwts 2025 | All Rights Reserved.</p>
-            <p class="text-gray-400">Property of KWTS</p>
+            
+            <!-- Departments Links -->
+            <div class="border-t border-white/20 pt-8 mb-8">
+                <h4 class="text-lg font-semibold text-white mb-4 font-serif">Our Departments</h4>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <a href="#" class="text-gray-300 hover:text-[#feeaba] transition-colors text-sm">District Attorney's Office</a>
+                    <a href="#" class="text-gray-300 hover:text-[#feeaba] transition-colors text-sm">Judiciary</a>
+                    <a href="#" class="text-gray-300 hover:text-[#feeaba] transition-colors text-sm">Public Attorney's Office</a>
+                    <a href="#" class="text-gray-300 hover:text-[#feeaba] transition-colors text-sm">Private Lawyers</a>
+                </div>
+            </div>
+            
+            <!-- Bottom Bar -->
+            <div class="border-t border-white/20 pt-6">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <div class="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6 text-sm text-gray-400">
+                        <p>&copy; 2025 Department of Justice, Los Santos. All Rights Reserved.</p>
+                        <span class="hidden md:block">|</span>
+                        <p>Property of KWTS</p>
+                    </div>
+                    <div class="flex items-center space-x-4 text-sm text-gray-400">
+                        <a href="#" class="hover:text-[#feeaba] transition-colors">Privacy Policy</a>
+                        <span>|</span>
+                        <a href="#" class="hover:text-[#feeaba] transition-colors">Terms of Service</a>
+                        <span>|</span>
+                        <a href="contact.html" class="hover:text-[#feeaba] transition-colors">Contact</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </footer>
 
