@@ -112,4 +112,4 @@ Inspired by Grand Theft Auto V’s Department of Justice.
 ---
 
 _This project is for educational and hobbyist purposes only and is not affiliated with Rockstar Games or GTA V._
-_This Project is for educational and hobbyist purposes only and is not affilated with the US Department of Justice or any Department ot Ministry of justice on other country_
+_This Project is for educational and hobbyist purposes only and is not affilated with the US Department of Justice or any Department or Ministry of justice on other country_
