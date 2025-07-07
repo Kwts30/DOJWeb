@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memorandums - Los Santos Department of Justice</title>    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="memorandums.css">
+    <title>Memorandum Template - Los Santos Department of Justice</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../memorandums.css">
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/png" href="../assets/doj-seal.png">
-    <link rel="apple-touch-icon" href="../assets/doj-seal.png">
+    <link rel="icon" type="image/png" href="../../assets/doj-seal.png">
+    <link rel="apple-touch-icon" href="../../assets/doj-seal.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -28,19 +29,20 @@
             <div class="flex items-center justify-between">
                 <!-- Left Spacer -->
                 <div class="w-16"></div>
-                  <!-- Center Content - Logos and Department Info -->
+                
+                <!-- Center Content - Logos and Department Info -->
                 <div class="flex items-center justify-center space-x-6">
-                    <img src="../assets/doj-seal.png" alt="Department of Justice Seal" class="h-20 w-20 hover:scale-105 transition-transform duration-300 drop-shadow-lg">
+                    <img src="../../assets/doj-seal.png" alt="Department of Justice Seal" class="h-20 w-20 hover:scale-105 transition-transform duration-300 drop-shadow-lg">
                     <div class="text-center">
                         <h1 class="text-2xl md:text-4xl font-bold mb-1 tracking-tight font-serif">DEPARTMENT OF JUSTICE</h1>
                         <p class="text-sm md:text-lg text-gray-200 font-medium">City of Los Santos | State of San Andreas</p>
                     </div>
-                    <img src="../assets/city-seal.webp" alt="City of Los Santos Seal" class="h-20 w-20 hover:scale-105 transition-transform duration-300 drop-shadow-lg">
+                    <img src="../../assets/city-seal.webp" alt="City of Los Santos Seal" class="h-20 w-20 hover:scale-105 transition-transform duration-300 drop-shadow-lg">
                 </div>
                 
                 <!-- Right - Hamburger Menu -->
                 <div class="relative">
-                    <button class="p-3 rounded-lg hover:bg-white/10 transition-all duration-300 group" id="menu-toggle" aria-label="Open navigation menu">
+                    <button class="p-3 rounded-lg hover:bg-white/10 transition-all duration-300 group" id="menu-toggle">
                         <div class="hamburger-icon">
                             <span class="hamburger-line"></span>
                             <span class="hamburger-line"></span>
@@ -54,46 +56,49 @@
         <!-- Mobile Navigation Menu -->
         <nav class="fixed top-0 right-0 h-full w-80 bg-gradient-to-b from-doj-brown to-[#1a0f08] transform translate-x-full transition-transform duration-300 z-50 shadow-2xl" id="mobile-menu">
             <div class="p-6">
-                <!-- Menu Header -->                <div class="flex items-center justify-between mb-8">
+                <!-- Menu Header -->
+                <div class="flex items-center justify-between mb-8">
                     <div class="flex items-center space-x-3">
-                        <img src="../assets/doj-seal.png" alt="DOJ Seal" class="h-12 w-12">
+                        <img src="../../assets/doj-seal.png" alt="DOJ Seal" class="h-12 w-12">
                         <div>
                             <h3 class="text-lg font-bold text-white font-serif">DOJ</h3>
                             <p class="text-xs text-gray-300">Los Santos</p>
                         </div>
                     </div>
-                    <button class="p-2 rounded-lg hover:bg-white/10 transition-colors" id="menu-close" aria-label="Close navigation menu">
+                    <button class="p-2 rounded-lg hover:bg-white/10 transition-colors" id="menu-close">
                         <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                         </svg>
                     </button>
                 </div>
-                  <!-- Navigation Links -->
+                
+                <!-- Navigation Links -->
                 <div class="space-y-2">
-                    <a href="../index.html" class="menu-link flex items-center space-x-3 px-4 py-4 rounded-xl text-white hover:bg-white/10 transition-all duration-300 group">
+                    <a href="../../index.html" class="menu-link flex items-center space-x-3 px-4 py-4 rounded-xl text-white hover:bg-white/10 transition-all duration-300 group">
                         <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
                         </svg>
-                        <span class="font-semibold">Home</span>                    </a>
-                    <a href="memorandums.html" class="menu-link active flex items-center space-x-3 px-4 py-4 rounded-xl text-white hover:bg-white/10 transition-all duration-300 group">
+                        <span class="font-semibold">Home</span>
+                    </a>
+                    <a href="../memorandums.html" class="menu-link active flex items-center space-x-3 px-4 py-4 rounded-xl text-white hover:bg-white/10 transition-all duration-300 group">
                         <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
                         </svg>
                         <span class="font-semibold">Memorandums</span>
                     </a>
-                    <a href="../penal-codes.html" class="menu-link flex items-center space-x-3 px-4 py-4 rounded-xl text-white hover:bg-white/10 transition-all duration-300 group">
+                    <a href="../../penal-codes.html" class="menu-link flex items-center space-x-3 px-4 py-4 rounded-xl text-white hover:bg-white/10 transition-all duration-300 group">
                         <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                         </svg>
                         <span class="font-semibold">Penal Codes</span>
                     </a>
-                    <a href="../rules.html" class="menu-link flex items-center space-x-3 px-4 py-4 rounded-xl text-white hover:bg-white/10 transition-all duration-300 group">
+                    <a href="../../rules.html" class="menu-link flex items-center space-x-3 px-4 py-4 rounded-xl text-white hover:bg-white/10 transition-all duration-300 group">
                         <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/>
                         </svg>
                         <span class="font-semibold">Rules</span>
                     </a>
-                    <a href="../staff.html" class="menu-link flex items-center space-x-3 px-4 py-4 rounded-xl text-white hover:bg-white/10 transition-all duration-300 group">
+                    <a href="../../staff.html" class="menu-link flex items-center space-x-3 px-4 py-4 rounded-xl text-white hover:bg-white/10 transition-all duration-300 group">
                         <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/>
                         </svg>
@@ -116,77 +121,107 @@
     </header>
 
     <!-- Main Content -->
-    <main class="flex-grow bg-white">
-        <!-- Hero Section -->
-        <section class="bg-gradient-to-r from-doj-brown to-[#2c1810] text-white py-16">
-            <div class="container mx-auto px-6 text-center">                <div class="flex items-center justify-center mb-6">
-                    <img src="../assets/doj-seal.png" alt="Department of Justice Seal" class="h-16 w-16 mr-4">
-                    <h1 class="text-4xl md:text-5xl font-bold font-serif">Official Memorandums</h1>
-                </div>
-                <p class="text-xl text-gray-200 max-w-3xl mx-auto">
-                    Public notices, announcements, and official communications from the Department of Justice to keep the citizens of Los Santos informed.
-                </p>
-            </div>
-        </section>
-
-        <!-- Search and Filter Section -->
-        <section class="bg-gray-50 py-8">
+    <main class="flex-grow">
+        <!-- Breadcrumb -->
+        <nav class="bg-gray-100 py-4" aria-label="Breadcrumb">
             <div class="container mx-auto px-6">
-                <div class="flex flex-col md:flex-row gap-4 items-center justify-between">
-                    <div class="flex-1 max-w-md">
-                        <div class="relative">
-                            <input type="text" id="memo-search" placeholder="Search memorandums..." 
-                                   class="w-full px-4 py-3 pl-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-doj-brown focus:border-transparent">
-                            <svg class="absolute left-3 top-3.5 h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                            </svg>
+                <ol class="flex items-center space-x-2 text-sm">
+                    <li><a href="../../index.html" class="text-doj-brown hover:text-[#2c1810] transition-colors">Home</a></li>
+                    <li class="text-gray-400">/</li>
+                    <li><a href="../memorandums.html" class="text-doj-brown hover:text-[#2c1810] transition-colors">Memorandums</a></li>
+                    <li class="text-gray-400">/</li>
+                    <li class="text-gray-600" id="memo-breadcrumb">Loading...</li>
+                </ol>
+            </div>
+        </nav>
+
+        <!-- Document Header -->
+        <section class="bg-white border-b border-gray-200 py-8">
+            <div class="container mx-auto px-6">
+                <div class="flex items-start justify-between">
+                    <div class="flex-1">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-doj-brown text-white" id="memo-category">
+                                Loading...
+                            </span>
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-red-100 text-red-800" id="memo-priority">
+                                Loading...
+                            </span>
+                        </div>
+                        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-serif" id="memo-title">
+                            Loading Memorandum...
+                        </h1>
+                        <div class="flex flex-wrap items-center gap-4 text-sm text-gray-600">
+                            <div class="flex items-center space-x-2">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                                </svg>
+                                <span id="memo-date">Loading...</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
+                                </svg>
+                                <span id="memo-author">Loading...</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 110 2h-3a1 1 0 01-1-1v-2a1 1 0 00-1-1H9a1 1 0 00-1 1v2a1 1 0 01-1 1H4a1 1 0 110-2V4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span id="memo-number">Loading...</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="flex gap-4">
-                        <label for="memo-category" class="sr-only">Filter by category</label>
-                        <select id="memo-category" class="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-doj-brown focus:border-transparent" aria-label="Filter memorandums by category">
-                            <option value="">All Categories</option>
-                            <option value="policy">Policy Updates</option>
-                            <option value="announcement">Announcements</option>
-                            <option value="procedure">Procedures</option>
-                            <option value="notice">Public Notices</option>
-                        </select>
-                        <label for="memo-year" class="sr-only">Filter by year</label>
-                        <select id="memo-year" class="px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-doj-brown focus:border-transparent" aria-label="Filter memorandums by year">
-                            <option value="">All Years</option>
-                            <option value="2025">2025</option>
-                            <option value="2024">2024</option>
-                            <option value="2023">2023</option>
-                        </select>
+                    <div class="flex space-x-2">
+                        <button onclick="window.print()" class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition-colors">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
+                            </svg>
+                            Print
+                        </button>
+                        <button onclick="shareMemorandum()" class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition-colors">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"/>
+                            </svg>
+                            Share
+                        </button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Memorandums List Section -->
-        <section class="py-12">
+        <!-- Document Content -->
+        <section class="py-12 bg-white">
             <div class="container mx-auto px-6">
-                <div id="memorandums-container" class="space-y-6">
-                    <!-- Memorandums will be loaded here -->
-                </div>
-                
-                <!-- Loading State -->
-                <div id="loading-state" class="text-center py-12">
-                    <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-doj-brown mx-auto"></div>
-                    <p class="mt-4 text-gray-600">Loading memorandums...</p>
-                </div>
-                
-                <!-- Empty State -->
-                <div id="empty-state" class="text-center py-12 hidden">
-                    <svg class="mx-auto h-24 w-24 text-gray-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                    </svg>
-                    <h3 class="text-xl font-semibold text-gray-700 mb-2">No memorandums found</h3>
-                    <p class="text-gray-500">Try adjusting your search criteria or check back later for new releases.</p>
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-white rounded-lg shadow-lg p-8 border border-gray-200">
+                        <div id="memo-content" class="prose prose-lg max-w-none">
+                            <div class="animate-pulse">
+                                <div class="h-4 bg-gray-200 rounded w-3/4 mb-4"></div>
+                                <div class="h-4 bg-gray-200 rounded w-1/2 mb-4"></div>
+                                <div class="h-4 bg-gray-200 rounded w-5/6 mb-4"></div>
+                                <div class="h-4 bg-gray-200 rounded w-2/3 mb-4"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-    </main>    <!-- Footer -->
+
+        <!-- Related Documents -->
+        <section class="py-12 bg-gray-50">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-8 font-serif">Related Documents</h2>
+                    <div id="related-docs" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Related documents will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
     <footer class="bg-gradient-to-r from-doj-brown to-[#1a0f08] text-white">
         <div class="container mx-auto px-6 py-12">
             <!-- Main Footer Content -->
@@ -194,7 +229,7 @@
                 <!-- Department Info -->
                 <div class="md:col-span-2">
                     <div class="flex items-center space-x-4 mb-6">
-                        <img src="../assets/doj-seal.png" alt="DOJ Seal" class="h-16 w-16">
+                        <img src="../../assets/doj-seal.png" alt="DOJ Seal" class="h-16 w-16">
                         <div>
                             <h3 class="text-xl font-bold font-serif text-white">Department of Justice</h3>
                             <p class="text-[#feeaba] text-sm">City of Los Santos | State of San Andreas</p>
@@ -210,11 +245,11 @@
                 <div>
                     <h4 class="text-lg font-semibold text-white mb-4 font-serif">Quick Links</h4>
                     <ul class="space-y-2">
-                        <li><a href="../index.html" class="text-gray-300 hover:text-[#feeaba] transition-colors text-sm">Home</a></li>
-                        <li><a href="memorandums.html" class="text-gray-300 hover:text-[#feeaba] transition-colors text-sm">Memorandums</a></li>
-                        <li><a href="../penal-codes.html" class="text-gray-300 hover:text-[#feeaba] transition-colors text-sm">Penal Codes</a></li>
-                        <li><a href="../rules.html" class="text-gray-300 hover:text-[#feeaba] transition-colors text-sm">Rules</a></li>
-                        <li><a href="../staff.html" class="text-gray-300 hover:text-[#feeaba] transition-colors text-sm">Staff Directory</a></li>
+                        <li><a href="../../index.html" class="text-gray-300 hover:text-[#feeaba] transition-colors text-sm">Home</a></li>
+                        <li><a href="../memorandums.html" class="text-gray-300 hover:text-[#feeaba] transition-colors text-sm">Memorandums</a></li>
+                        <li><a href="../../penal-codes.html" class="text-gray-300 hover:text-[#feeaba] transition-colors text-sm">Penal Codes</a></li>
+                        <li><a href="../../rules.html" class="text-gray-300 hover:text-[#feeaba] transition-colors text-sm">Rules</a></li>
+                        <li><a href="../../staff.html" class="text-gray-300 hover:text-[#feeaba] transition-colors text-sm">Staff Directory</a></li>
                     </ul>
                 </div>
                 
@@ -237,7 +272,7 @@
                         </div>
                         <div class="mt-4">
                             <a href="https://discord.gg/YC8HVgnjbH" class="inline-flex items-center space-x-2 bg-white/10 hover:bg-white/20 rounded-lg px-3 py-2 transition-colors">
-                                <img src="../assets/Discord-icon.png" alt="Discord" class="w-7 h-5" />
+                                <img src="../../assets/Discord-icon.png" alt="Discord" class="w-7 h-5" />
                                 <span class="text-sm text-white">Join Our Discord</span>
                             </a>
                         </div>
@@ -274,7 +309,9 @@
                 </div>
             </div>
         </div>
-    </footer><script src="../main.js"></script>
-    <script src="memorandums.js"></script>
+    </footer>
+
+    <script src="../../main.js"></script>
+    <!-- Individual memorandum pages don't need additional JavaScript -->
 </body>
 </html>

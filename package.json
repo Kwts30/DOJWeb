@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "Los Santos Department of Justice Website",
   "scripts": {
-    "build": "npx tailwindcss -i ./input.css -o ./style.css",
-    "watch": "npx tailwindcss -i ./input.css -o ./style.css --watch"
+    "build": "npx tailwindcss -i ./input.css -o ./style.css --minify",
+    "watch": "npx tailwindcss -i ./input.css -o ./style.css --watch",
+    "dev": "npx tailwindcss -i ./input.css -o ./style.css --watch",
+    "start": "npx tailwindcss -i ./input.css -o ./style.css && echo 'Build complete! Open index.html in your browser.'"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.17",

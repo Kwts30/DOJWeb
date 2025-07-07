@@ -21,7 +21,8 @@
         }
     </script>
 </head>
-<body class="min-h-screen flex flex-col bg-gray-50">    <!-- Header -->
+<body class="min-h-screen flex flex-col bg-gray-50">
+    <!-- Header -->
     <header class="bg-gradient-to-r from-doj-brown to-[#2c1810] text-white shadow-lg relative">
         <div class="container mx-auto px-6 py-6">
             <div class="flex items-center justify-between">
@@ -40,7 +41,7 @@
                 
                 <!-- Right - Hamburger Menu -->
                 <div class="relative">
-                    <button class="p-3 rounded-lg hover:bg-white/10 transition-all duration-300 group" id="menu-toggle">
+                    <button class="p-3 rounded-lg hover:bg-white/10 transition-all duration-300 group" id="menu-toggle" aria-label="Open navigation menu">
                         <div class="hamburger-icon">
                             <span class="hamburger-line"></span>
                             <span class="hamburger-line"></span>
@@ -63,7 +64,7 @@
                             <p class="text-xs text-gray-300">Los Santos</p>
                         </div>
                     </div>
-                    <button class="p-2 rounded-lg hover:bg-white/10 transition-colors" id="menu-close">
+                    <button class="p-2 rounded-lg hover:bg-white/10 transition-colors" id="menu-close" aria-label="Close navigation menu">
                         <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                         </svg>
@@ -151,7 +152,9 @@
                             </div>
                             
                             <!-- Filter Dropdown -->
-                            <div class="w-full lg:w-auto">                                <select id="codeFilter" class="w-full lg:w-auto px-6 py-4 bg-white/20 border border-white/30 rounded-xl text-white focus:ring-2 focus:ring-white/50 focus:border-white/50 backdrop-blur-sm transition-all duration-300">
+                            <div class="w-full lg:w-auto">
+                                <label for="codeFilter" class="sr-only">Filter penal codes by category</label>
+                                <select id="codeFilter" class="w-full lg:w-auto px-6 py-4 bg-white/20 border border-white/30 rounded-xl text-white focus:ring-2 focus:ring-white/50 focus:border-white/50 backdrop-blur-sm transition-all duration-300" aria-label="Filter penal codes by category">
                                     <option value="" class="text-gray-900">All Codes</option>
                                     <option value="vehicle" class="text-gray-900">Vehicle Code</option>
                                     <option value="title1" class="text-gray-900">Title 1: Sovereignty</option>
@@ -398,13 +401,15 @@
                     </div>
                 </div>
             </div>
-        </section>        <!-- Penal Code Modal -->
+        </section>
+
+        <!-- Penal Code Modal -->
         <div id="penalCodeModal" class="fixed inset-0 bg-black/50 hidden z-50 flex items-center justify-center p-4">
             <div class="bg-white rounded-xl max-w-7xl w-full h-[95vh] flex flex-col overflow-hidden shadow-2xl">
                 <!-- Modal Header -->
                 <div class="flex items-center justify-between p-6 bg-gradient-to-r from-doj-brown to-amber-800 text-white flex-shrink-0">
                     <h3 id="penalModalTitle" class="text-2xl font-bold"></h3>
-                    <button id="closePenalModal" class="p-2 hover:bg-white/10 rounded-lg transition-colors">
+                    <button id="closePenalModal" class="p-2 hover:bg-white/10 rounded-lg transition-colors" aria-label="Close penal code modal">
                         <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                         </svg>
@@ -430,11 +435,33 @@
                 </div>
             </div>
         </div>
-    </main>                    <!-- Vehicle Code Section -->
-                    <div id="vehicle" class="penal-title-content hidden">
-                        <!-- Enhanced Header Design -->                        <div class="bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 text-white rounded-xl p-8 mb-8 shadow-2xl">
-                            <div class="flex items-center justify-center mb-6">                                <div class="bg-white/10 p-4 rounded-full mr-4">
-                                    <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+
+        <!-- Vehicle Code Section -->
+        <div id="vehicle" class="penal-title-content hidden">
+            <!-- Enhanced Header Design -->
+            <div class="bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 text-white rounded-xl p-8 mb-8 shadow-2xl">
+                <div class="flex items-center justify-center mb-6">
+                    <div class="bg-white/10 p-4 rounded-full mr-4">
+                        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 7h-3V6a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v1H8a3 3 0 0 0-3 3v8a1 1 0 0 0 1 1h1.78A2 2 0 0 0 10 20a2 2 0 0 0 2.22-1H14a2 2 0 0 0 2.22 1A2 2 0 0 0 18.22 19H20a1 1 0 0 0 1-1v-8a3 3 0 0 0-3-3zM8 17a1 1 0 1 1 1-1 1 1 0 0 1-1 1zm8 0a1 1 0 1 1 1-1 1 1 0 0 1-1 1zm3-3H5v-4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1z"></path>
+                        </svg>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="text-4xl font-bold mb-2 tracking-tight">Vehicle Code</h3>
+                        <div class="flex items-center justify-center space-x-2">
+                            <span class="inline-flex items-center px-4 py-2 bg-white/20 text-white text-sm font-medium rounded-full backdrop-blur-sm">
+                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                </svg>
+                                Traffic Laws
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-xl text-center text-blue-100 leading-relaxed max-w-3xl mx-auto">
+                    Comprehensive traffic regulations and violations governing vehicle operation, speed limits, traffic signals, and parking regulations in Los Santos.
+                </p>
+            </div>
                                         <path d="M19 7h-3V6a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v1H8a3 3 0 0 0-3 3v8a1 1 0 0 0 1 1h1.78A2 2 0 0 0 10 20a2 2 0 0 0 2.22-1H14a2 2 0 0 0 2.22 1A2 2 0 0 0 18.22 19H20a1 1 0 0 0 1-1v-8a3 3 0 0 0-3-3zM8 17a1 1 0 1 1 1-1 1 1 0 0 1-1 1zm8 0a1 1 0 1 1 1-1 1 1 0 0 1-1 1zm3-3H5v-4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1z"></path>
                                     </svg>
                                 </div>
@@ -6191,7 +6218,9 @@
                 </div>
             </div>
         </section>
-    </main>    <!-- Footer -->
+    </main>
+
+    <!-- Footer -->
     <footer class="bg-gradient-to-r from-doj-brown to-[#1a0f08] text-white">
         <div class="container mx-auto px-6 py-12">
             <!-- Main Footer Content -->

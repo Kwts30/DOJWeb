@@ -1,0 +1,30 @@
+{
+  "memorandums": [
+    {
+      "id": "JD-2025-001",
+      "title": "DIRECTIVE ON FACIAL COVERINGS FOR ENHANCED PUBLIC SAFETY AND IDENTIFICATION IN PUBLIC AND GOVERNMENT ESTABLISHMENTS",
+      "excerpt": "Judicial directive issued to clarify and reinforce the imperative for unobstructed facial identification within public and government establishments in Los Santos.",
+      "category": "policy",
+      "priority": "high",
+      "date": "2025-05-30",
+      "author": "The Honorable Kawatskie Delos Reyes, Chief Justice",
+      "status": "active",
+      "memorandumNumber": "JD-2025-001",
+      "slug": "facial-coverings-directive-2025",
+      "filename": "JD-2025-001-facial-coverings-directive.html"
+    },
+    {
+      "id": "DOJ-SC-001",
+      "title": "IMMEDIATE APPREHENSION OF HIGH-ALERT SUBJECTS FRANK BOMPENSIERO AND LUCIANO D'ANGELO",
+      "excerpt": "Urgent directive regarding the immediate apprehension of Mr. Frank Bompensiero and Mr. Luciano D'Angelo - high alert subjects involved in attempted murder of a Law Enforcement Officer.",
+      "category": "announcement",
+      "priority": "high",
+      "date": "2025-06-08",
+      "author": "Department of Justice (DOJ)",
+      "status": "active",
+      "memorandumNumber": "DOJ-SC-001",
+      "slug": "apprehension-directive-2025",
+      "filename": "DOJ-SC-001-apprehension-directive.html"
+    }
+  ]
+}

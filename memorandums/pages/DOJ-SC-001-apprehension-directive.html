@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMMEDIATE APPREHENSION OF HIGH-ALERT SUBJECTS - Los Santos Department of Justice</title>
+    <meta name="description" content="Urgent directive regarding the immediate apprehension of Mr. Frank Bompensiero and Mr. Luciano D'Angelo - high alert subjects involved in attempted murder of a Law Enforcement Officer.">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../memorandums.css">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../../assets/doj-seal.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'doj-brown': '#2c1810',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen flex flex-col bg-gray-50">
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-doj-brown to-[#2c1810] text-white shadow-lg relative">
+        <div class="container mx-auto px-6 py-6">
+            <div class="flex items-center justify-between">
+                <div class="w-16"></div>
+                <div class="flex items-center justify-center space-x-6">
+                    <img src="../../assets/doj-seal.png" alt="Department of Justice Seal" class="h-20 w-20 hover:scale-105 transition-transform duration-300 drop-shadow-lg">
+                    <div class="text-center">
+                        <h1 class="text-2xl md:text-4xl font-bold mb-1 tracking-tight font-serif">DEPARTMENT OF JUSTICE</h1>
+                        <p class="text-sm md:text-lg text-gray-200 font-medium">City of Los Santos | State of San Andreas</p>
+                    </div>
+                    <img src="../../assets/city-seal.webp" alt="City of Los Santos Seal" class="h-20 w-20 hover:scale-105 transition-transform duration-300 drop-shadow-lg">
+                </div>
+                <div class="relative">
+                    <button class="p-3 rounded-lg hover:bg-white/10 transition-all duration-300 group" id="menu-toggle" aria-label="Open menu">
+                        <div class="hamburger-icon">
+                            <span class="hamburger-line"></span>
+                            <span class="hamburger-line"></span>
+                            <span class="hamburger-line"></span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation Menu -->
+        <nav class="fixed top-0 right-0 h-full w-80 bg-gradient-to-b from-doj-brown to-[#1a0f08] transform translate-x-full transition-transform duration-300 z-50 shadow-2xl" id="mobile-menu">
+            <div class="p-6">
+                <div class="flex items-center justify-between mb-8">
+                    <div class="flex items-center space-x-3">
+                        <img src="../../assets/doj-seal.png" alt="DOJ Seal" class="h-12 w-12">
+                        <div>
+                            <h3 class="text-lg font-bold text-white font-serif">DOJ</h3>
+                            <p class="text-xs text-gray-300">Los Santos</p>
+                        </div>
+                    </div>
+                    <button class="p-2 rounded-lg hover:bg-white/10 transition-colors" id="menu-close" aria-label="Close menu">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                
+                <div class="space-y-2">
+                    <a href="../../index.html" class="menu-link flex items-center space-x-3 px-4 py-4 rounded-xl text-white hover:bg-white/10 transition-all duration-300 group">
+                        <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+                        </svg>
+                        <span class="font-semibold">Home</span>
+                    </a>
+                    <a href="../memorandums.html" class="menu-link active flex items-center space-x-3 px-4 py-4 rounded-xl text-white hover:bg-white/10 transition-all duration-300 group">
+                        <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="font-semibold">Memorandums</span>
+                    </a>
+                    <a href="../../penal-codes.html" class="menu-link flex items-center space-x-3 px-4 py-4 rounded-xl text-white hover:bg-white/10 transition-all duration-300 group">
+                        <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="font-semibold">Penal Codes</span>
+                    </a>
+                    <a href="../../rules.html" class="menu-link flex items-center space-x-3 px-4 py-4 rounded-xl text-white hover:bg-white/10 transition-all duration-300 group">
+                        <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="font-semibold">Rules</span>
+                    </a>
+                    <a href="../../staff.html" class="menu-link flex items-center space-x-3 px-4 py-4 rounded-xl text-white hover:bg-white/10 transition-all duration-300 group">
+                        <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/>
+                        </svg>
+                        <span class="font-semibold">Staff</span>
+                    </a>
+                </div>
+                
+                <div class="absolute bottom-6 left-6 right-6">
+                    <div class="border-t border-white/20 pt-4">
+                        <p class="text-xs text-gray-400 text-center">Department of Justice</p>
+                        <p class="text-xs text-gray-500 text-center">Los Santos | San Andreas</p>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="fixed inset-0 bg-black/50 opacity-0 invisible transition-all duration-300 z-40" id="menu-overlay"></div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        <!-- Breadcrumb -->
+        <nav class="bg-gray-100 py-4" aria-label="Breadcrumb">
+            <div class="container mx-auto px-6">
+                <ol class="flex items-center space-x-2 text-sm">
+                    <li><a href="../../index.html" class="text-doj-brown hover:text-[#2c1810] transition-colors">Home</a></li>
+                    <li class="text-gray-400">/</li>
+                    <li><a href="../memorandums.html" class="text-doj-brown hover:text-[#2c1810] transition-colors">Memorandums</a></li>
+                    <li class="text-gray-400">/</li>
+                    <li class="text-gray-600">High-Alert Subjects Apprehension</li>
+                </ol>
+            </div>
+        </nav>
+
+        <!-- Document Header -->
+        <section class="bg-white border-b border-gray-200 py-8">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                            Announcement
+                        </span>
+                        <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-red-100 text-red-800">
+                            High Priority
+                        </span>
+                    </div>
+                    <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-serif">
+                        IMMEDIATE APPREHENSION OF HIGH-ALERT SUBJECTS FRANK BOMPENSIERO AND LUCIANO D'ANGELO
+                    </h1>
+                    <div class="flex flex-wrap items-center gap-4 text-sm text-gray-600">
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>June 8, 2025</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Department of Justice (DOJ)</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 110 2h-3a1 1 0 01-1-1v-2a1 1 0 00-1-1H9a1 1 0 00-1 1v2a1 1 0 01-1 1H4a1 1 0 110-2V4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>DOJ-SC-001</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Document Content -->
+        <section class="py-12 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-white rounded-lg shadow-lg p-8 border border-gray-200">
+                        <div class="prose prose-lg max-w-none">
+                            <div class="official-header mb-6 p-4 bg-gray-50 border-l-4 border-red-500">
+                                <div class="flex items-center mb-2">
+                                    <img src="../../assets/doj-seal.png" alt="DOJ Seal" class="h-12 w-12 mr-3">
+                                    <div>
+                                        <h2 class="text-lg font-bold text-doj-brown">DEPARTMENT OF JUSTICE</h2>
+                                        <p class="text-sm text-gray-600">STATE OF SAN ANDREAS</p>
+                                        <p class="text-xs text-gray-500">CITY OF LOS SANTOS | ROCKFORD HILLS, CITY HALL</p>
+                                    </div>
+                                </div>
+                                <div class="mt-4 text-sm">
+                                    <p><strong>MEMORANDUM NO:</strong> DOJ-SC-001</p>
+                                    <p><strong>STATE OF LOS SANTOS</strong></p>
+                                    <p class="mt-2"><strong>TO:</strong> Los Santos Police Department (LSPD)</p>
+                                    <p><strong>FROM:</strong> Department of Justice (DOJ)</p>
+                                    <p><strong>DATE:</strong> June 8, 2025</p>
+                                </div>
+                            </div>
+
+                            <h3 class="text-xl font-bold text-center mb-6 text-red-600">IMMEDIATE APPREHENSION OF HIGH-ALERT SUBJECTS FRANK BOMPENSIERO AND LUCIANO D'ANGELO</h3>
+                            
+                            <p class="mb-4">This memorandum reiterates and formalizes an urgent directive regarding the immediate apprehension of Mr. Frank Bompensiero and Mr. Luciano D'Angelo.</p>
+                            
+                            <p class="mb-4">These individuals are designated as subjects of high alert within the Department of Justice. This designation stems from their direct and confirmed involvement in the attempted murder of a Law Enforcement Officer, as documented under criminal case number <strong>DOJ-CCN2025-001</strong>. A new, related warrant for their arrest, <strong>DOJ-CCN2025-002</strong>, has been issued to facilitate their capture and bring them to justice.</p>
+                            
+                            <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6">
+                                <h4 class="font-bold text-yellow-800 mb-2">⚠️ HIGH PRIORITY DIRECTIVE</h4>
+                                <p class="text-yellow-700">All Los Santos Police Department personnel are hereby ordered to undertake any and all necessary actions, strictly in accordance with applicable laws and established departmental protocols, to locate and apprehend Mr. Frank Bompensiero and Mr. Luciano D'Angelo.</p>
+                            </div>
+                            
+                            <h4 class="font-bold mb-3">Case Details:</h4>
+                            <ul class="list-disc pl-6 mb-4">
+                                <li><strong>Primary Case Number:</strong> DOJ-CCN2025-001</li>
+                                <li><strong>Related Warrant:</strong> DOJ-CCN2025-002</li>
+                                <li><strong>Charges:</strong> Attempted Murder of a Law Enforcement Officer</li>
+                                <li><strong>Alert Level:</strong> HIGH</li>
+                            </ul>
+                            
+                            <h4 class="font-bold mb-3">Subjects:</h4>
+                            <ul class="list-disc pl-6 mb-4">
+                                <li><strong>Frank Bompensiero</strong> - High Alert Subject</li>
+                                <li><strong>Luciano D'Angelo</strong> - High Alert Subject</li>
+                            </ul>
+                            
+                            <div class="bg-red-50 border-l-4 border-red-400 p-4 mb-6">
+                                <h4 class="font-bold text-red-800 mb-2">🚨 OFFICER SAFETY NOTICE</h4>
+                                <p class="text-red-700">Their prompt apprehension is paramount for the safety and security of our officers and the public, and it is essential for the effective administration of justice in Los Santos.</p>
+                            </div>
+                            
+                            <h4 class="font-bold mb-3">Departmental Requirements:</h4>
+                            <ul class="list-disc pl-6 mb-6">
+                                <li>All LSPD personnel must prioritize the location and apprehension of these subjects</li>
+                                <li>Actions must be taken in strict accordance with applicable laws</li>
+                                <li>All operations must follow established departmental protocols</li>
+                                <li>Immediate reporting of any sightings or leads to command</li>
+                                <li>Coordinate with DOJ for all arrest procedures</li>
+                            </ul>
+                            
+                            <div class="mt-8 p-4 bg-red-50 border border-red-200 rounded-lg">
+                                <p class="text-sm font-medium text-red-900">ISSUED BY THE DEPARTMENT OF JUSTICE</p>
+                                <p class="text-sm text-red-800 mt-2">The Honorable Kawatskie Delos Reyes<br>Chief Justice, Superior Court of Los Santos</p>
+                                <p class="text-xs text-red-600 mt-2">Date: June 8, 2025</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-doj-brown to-[#1a0f08] text-white">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <img src="../../assets/doj-seal.png" alt="DOJ Seal" class="h-16 w-16">
+                        <div>
+                            <h3 class="text-xl font-bold font-serif text-white">Department of Justice</h3>
+                            <p class="text-[#feeaba] text-sm">City of Los Santos | State of San Andreas</p>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4 font-serif">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../../index.html" class="text-gray-300 hover:text-[#feeaba] transition-colors text-sm">Home</a></li>
+                        <li><a href="../memorandums.html" class="text-gray-300 hover:text-[#feeaba] transition-colors text-sm">Memorandums</a></li>
+                        <li><a href="../../penal-codes.html" class="text-gray-300 hover:text-[#feeaba] transition-colors text-sm">Penal Codes</a></li>
+                        <li><a href="../../rules.html" class="text-gray-300 hover:text-[#feeaba] transition-colors text-sm">Rules</a></li>
+                        <li><a href="../../staff.html" class="text-gray-300 hover:text-[#feeaba] transition-colors text-sm">Staff Directory</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4 font-serif">Connect With Us</h4>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-4 h-4 text-[#feeaba]" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                            </svg>
+                            <span class="text-gray-300 text-sm">info@losdoj.gov</span>
+                        </div>
+                        <div class="mt-4">
+                            <a href="https://discord.gg/YC8HVgnjbH" class="inline-flex items-center space-x-2 bg-white/10 hover:bg-white/20 rounded-lg px-3 py-2 transition-colors">
+                                <img src="../../assets/Discord-icon.png" alt="Discord" class="w-7 h-5" />
+                                <span class="text-sm text-white">Join Our Discord</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-white/20 pt-6">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <div class="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6 text-sm text-gray-400">
+                        <p>&copy; 2025 Department of Justice, Los Santos. All Rights Reserved.</p>
+                        <span class="hidden md:block">|</span>
+                        <p>Property of KWTS</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../main.js"></script>
+</body>
+</html>
