@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy Node.js app to Azure Web App - Lossantosdepartmentofjustice
+name: Build and deploy Node.js app to Azure Web App - lossantosdepartmentofjustice
 
 on:
   push:
@@ -58,15 +58,15 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_BCB7C6FEAAB948C78E09E1170BA392A6 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_12C16BCBE7CA4296B4F12F5F0397D8C7 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_161C3A282A3A47E1A01247139B050E09 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_E886158360004469992016EE0E2A2BE3 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_6A3A1E1B632E4481A625AE453A128BA7 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_30D72B2882524E0F94B5A9D740EBEB05 }}
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'Lossantosdepartmentofjustice'
+          app-name: 'lossantosdepartmentofjustice'
           slot-name: 'Production'
           package: .
           
