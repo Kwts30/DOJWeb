@@ -1,0 +1,117 @@
+<%- include('partials/header', { title: 'Legal Forms & Court Dockets | Department of Justice', activePage: 'documents', script: '/js/dockets.js' }) %>
+
+  <!-- Title Banner (Extends behind Liquid Glass Header) -->
+  <section class="bg-slate-900 text-white pt-28 pb-10 border-b border-slate-800">
+    <div class="container mx-auto px-6">
+      <div class="max-w-3xl">
+        <div class="flex items-center space-x-3 mb-2">
+          <img src="/assets/sanandreaslogo.png" alt="San Andreas Seal" class="h-6 w-6">
+          <span class="text-doj-gold text-xs font-bold uppercase tracking-widest">Public Access & Filing Center</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-bold font-serif mb-3">Court Forms, Dockets & Filings</h2>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+          Search active judicial case dockets, verify active bench warrants, download official court motion templates, or submit public records requests.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Body -->
+  <main class="container mx-auto px-6 py-12 flex-1 space-y-12">
+
+    <!-- Court Dockets Lookup & Warrants Grid -->
+    <section class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div class="lg:col-span-2 space-y-6">
+        <div class="flex items-center justify-between">
+          <h3 class="text-2xl font-bold font-serif text-slate-900">Active Court Dockets</h3>
+          <div class="w-64">
+            <input id="docket-search-input" type="text" placeholder="Search case # or defendant..." class="w-full px-3 py-1.5 bg-white border border-slate-200 rounded-lg text-xs focus:outline-none">
+          </div>
+        </div>
+
+        <div id="dockets-container" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Populated by /js/dockets.js -->
+        </div>
+      </div>
+
+      <!-- Warrants -->
+      <div class="space-y-6">
+        <div class="flex items-center space-x-2">
+          <img src="/assets/lspd-logo.png" alt="LSPD Seal" class="h-6 w-6">
+          <h3 class="text-2xl font-bold font-serif text-slate-900">Bench Warrant Registry</h3>
+        </div>
+        <div id="warrants-container" class="space-y-3">
+          <!-- Populated by /js/dockets.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Official Forms Download Center -->
+    <section>
+      <div class="mb-6">
+        <h3 class="text-2xl font-bold font-serif text-slate-900 mb-1">Official Legal Forms & Applications</h3>
+        <p class="text-slate-600 text-sm">Download standardized judicial filing forms for attorneys and citizens.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="doj-card p-6 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-bold text-doj-gold uppercase">CRIMINAL MOTION</span>
+            <h4 class="text-lg font-bold text-slate-900 mt-1 mb-2">Motion to Suppress Evidence</h4>
+            <p class="text-slate-600 text-xs leading-relaxed mb-4">Form for defense attorneys challenging unlawful search and seizure under the 4th Amendment.</p>
+          </div>
+          <button onclick="window.showToast('Downloading Form CR-102 (Motion to Suppress)...', 'success')" class="w-full py-2 bg-slate-900 text-white rounded-xl text-xs font-bold hover:bg-doj-gold hover:text-slate-900 transition-all">Download PDF →</button>
+        </div>
+
+        <div class="doj-card p-6 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-bold text-doj-gold uppercase">SUBPOENA</span>
+            <h4 class="text-lg font-bold text-slate-900 mt-1 mb-2">Judicial Subpoena Application</h4>
+            <p class="text-slate-600 text-xs leading-relaxed mb-4">Official application to compel witness testimony or production of physical records.</p>
+          </div>
+          <button onclick="window.showToast('Downloading Form SUB-201 (Subpoena)...', 'success')" class="w-full py-2 bg-slate-900 text-white rounded-xl text-xs font-bold hover:bg-doj-gold hover:text-slate-900 transition-all">Download PDF →</button>
+        </div>
+
+        <div class="doj-card p-6 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-bold text-doj-gold uppercase">APPELLATE</span>
+            <h4 class="text-lg font-bold text-slate-900 mt-1 mb-2">Notice of Appeal</h4>
+            <p class="text-slate-600 text-xs leading-relaxed mb-4">Formal petition to appeal trial court verdicts to the Supreme Court of San Andreas.</p>
+          </div>
+          <button onclick="window.showToast('Downloading Form APP-301 (Appeal)...', 'success')" class="w-full py-2 bg-slate-900 text-white rounded-xl text-xs font-bold hover:bg-doj-gold hover:text-slate-900 transition-all">Download PDF →</button>
+        </div>
+
+        <div class="doj-card p-6 flex flex-col justify-between">
+          <div>
+            <span class="text-xs font-bold text-doj-gold uppercase">BAR REGISTRATION</span>
+            <h4 class="text-lg font-bold text-slate-900 mt-1 mb-2">State Bar Application</h4>
+            <p class="text-slate-600 text-xs leading-relaxed mb-4">Application for law school graduates and attorneys seeking admission to San Andreas Bar.</p>
+          </div>
+          <button onclick="window.showToast('Downloading Form BAR-101 (Application)...', 'success')" class="w-full py-2 bg-slate-900 text-white rounded-xl text-xs font-bold hover:bg-doj-gold hover:text-slate-900 transition-all">Download PDF →</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOIA / Public Records Request Form -->
+    <section class="bg-gradient-to-r from-slate-900 to-slate-800 rounded-2xl p-8 text-white border border-slate-700 shadow-xl">
+      <div class="max-w-2xl">
+        <span class="text-doj-gold text-xs font-bold uppercase tracking-widest">Public Information Act</span>
+        <h3 class="text-2xl font-bold font-serif mt-1 mb-2">Submit Public Records Request (FOIA)</h3>
+        <p class="text-slate-300 text-sm mb-6">Request public court transcripts, case disposition records, or department administrative logs.</p>
+
+        <form onsubmit="event.preventDefault(); window.showToast('Public Records Request Submitted! Request ID: #FOIA-2025-992', 'success');" class="space-y-4">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <input type="text" placeholder="Full Legal Name" required class="px-4 py-2.5 bg-slate-800 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:border-doj-gold">
+            <input type="email" placeholder="Contact Email Address" required class="px-4 py-2.5 bg-slate-800 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:border-doj-gold">
+          </div>
+          <textarea rows="3" placeholder="Describe the specific public records or court case details requested..." required class="w-full px-4 py-2.5 bg-slate-800 border border-slate-700 rounded-xl text-sm text-white focus:outline-none focus:border-doj-gold"></textarea>
+          <button type="submit" class="px-6 py-3 bg-doj-gold text-slate-950 font-bold text-xs uppercase tracking-wider rounded-xl hover:bg-amber-400 transition-all shadow-md">
+            Submit Record Request
+          </button>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+<%- include('partials/footer') %>

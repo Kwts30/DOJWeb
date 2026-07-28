@@ -1,12 +1,13 @@
 {
   "name": "ls-doj-website",
   "version": "1.0.0",
-  "description": "Los Santos Department of Justice Website",
+  "description": "Los Santos Department of Justice Web Application",
+  "main": "server.js",
   "scripts": {
-    "build": "npx tailwindcss -i ./input.css -o ./style.css --minify",
-    "watch": "npx tailwindcss -i ./input.css -o ./style.css --watch",
-    "dev": "npx tailwindcss -i ./input.css -o ./style.css --watch",
-    "start": "npx tailwindcss -i ./input.css -o ./style.css && echo 'Build complete! Open index.html in your browser.'"
+    "build": "npx tailwindcss -i ./input.css -o ./style.css --minify && npx tailwindcss -i ./input.css -o ./public/style.css --minify",
+    "watch": "npx tailwindcss -i ./input.css -o ./public/style.css --watch",
+    "start": "node server.js",
+    "dev": "npm run build && node server.js"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.17",
@@ -14,6 +15,8 @@
     "tailwindcss": "^3.4.1"
   },
   "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
     "xlsx": "^0.18.5"
   }
 }

@@ -1,0 +1,278 @@
+<%- include('partials/header', { title: 'Los Santos Department of Justice | Home', activePage: 'home', extraScript: '/js/dockets.js' }) %>
+
+  <!-- Fullscreen Video Hero Section -->
+  <section class="bg-slate-950 text-white relative overflow-hidden min-h-screen flex flex-col justify-center items-center pt-28 pb-16 border-b border-amber-500/20">
+    <!-- Background Video -->
+    <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0 opacity-60 pointer-events-none">
+      <source src="/assets/GTAcinematic.mp4" type="video/mp4">
+    </video>
+    <!-- Dark Gradient Backdrop overlay -->
+    <div class="absolute inset-0 bg-gradient-to-b from-slate-950/80 via-slate-950/50 to-slate-950/90 z-0"></div>
+    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#d4af37_1px,transparent_1px)] [background-size:24px_24px] z-0"></div>
+    
+    <div class="container mx-auto px-6 relative z-10 my-auto text-center max-w-4xl">
+      <!-- Top Badge -->
+      <div class="inline-flex items-center space-x-3 bg-amber-500/10 border border-amber-500/30 px-4 py-1.5 rounded-full text-doj-gold text-xs font-semibold uppercase tracking-wider mb-6 backdrop-blur-md">
+        <img src="/assets/sanandreaslogo.png" alt="San Andreas Seal" class="h-5 w-5 object-contain">
+        <span>Official Portal of the Judiciary & Executive Law</span>
+      </div>
+
+      <h2 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold font-serif tracking-tight leading-tight mb-6 drop-shadow-xl">
+        Equitable Justice. Transparent Law. Preserving Order.
+      </h2>
+
+      <p class="text-lg sm:text-xl text-slate-200 leading-relaxed font-body-doj max-w-3xl mx-auto mb-10 drop-shadow">
+        The Centralized Department of Justice Portal provides public access to the State Penal Code, Bar Association ethics, judicial dockets, legal forms, and official executive directives.
+      </p>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-wrap items-center justify-center gap-4">
+        <a href="/penal-codes" class="px-8 py-4 bg-doj-gold hover:bg-amber-400 text-slate-950 font-bold rounded-2xl shadow-2xl transition-all transform hover:-translate-y-0.5 flex items-center space-x-2">
+          <span>Explore Penal Codes & Charge Calculator</span>
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+        </a>
+        <a href="/documents" class="px-8 py-4 bg-slate-900/90 hover:bg-slate-800 text-white font-semibold rounded-2xl border border-slate-700/80 transition-all backdrop-blur-md shadow-xl">
+          View Court Dockets & Forms
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Apple-Style Scrollable Department Showcase Section -->
+  <section class="py-20 bg-slate-900 text-white relative border-b border-slate-800">
+    <div class="container mx-auto px-6">
+      
+      <!-- Section Header -->
+      <div class="max-w-3xl mx-auto text-center mb-16 apple-reveal">
+        <span class="text-doj-gold text-xs font-bold uppercase tracking-widest block mb-2">Designed For Integrity. Built For San Andreas.</span>
+        <h3 class="text-3xl sm:text-5xl font-extrabold font-serif tracking-tight mb-4">Inside the Department</h3>
+        <p class="text-slate-400 text-base sm:text-lg leading-relaxed">
+          Scroll to explore the 4 foundational pillars upholding rule of law across Los Santos.
+        </p>
+      </div>
+
+      <!-- Scrollable Showcase Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+        
+        <!-- Sticky Left Visual Display Card -->
+        <div class="lg:sticky lg:top-28 bg-slate-950/80 p-8 rounded-3xl border border-slate-800 shadow-2xl space-y-6">
+          <div class="flex items-center space-x-4">
+            <img id="pillar-active-seal" src="/assets/doj-seal.png" alt="DOJ Seal" class="h-16 w-16 object-contain drop-shadow-lg transition-all duration-500">
+            <div>
+              <span id="pillar-active-tag" class="text-xs font-bold text-doj-gold uppercase tracking-wider block">PILLAR I</span>
+              <h4 id="pillar-active-title" class="text-2xl font-bold font-serif text-white">Judicial Bench & Supreme Court</h4>
+            </div>
+          </div>
+
+          <p id="pillar-active-desc" class="text-slate-300 text-sm leading-relaxed font-body-doj text-base">
+            Presiding over constitutional interpretation, appellate reviews, emergency habeas corpus petitions, and high-profile felony bench trials with complete impartiality.
+          </p>
+
+          <div class="p-4 bg-slate-900/90 rounded-2xl border border-slate-800 flex items-center justify-between">
+            <div>
+              <span class="text-[10px] text-slate-400 uppercase font-bold block">Authority Level</span>
+              <span id="pillar-active-auth" class="text-sm font-semibold text-amber-400">Supreme State Court</span>
+            </div>
+            <a id="pillar-active-link" href="/rules" class="px-4 py-2 bg-doj-gold text-slate-950 font-bold text-xs rounded-xl hover:bg-amber-400 transition-all">Explore Pillar →</a>
+          </div>
+        </div>
+
+        <!-- Scrollable Feature Cards Stack (Apple-style scroll reveals) -->
+        <div class="space-y-8">
+          
+          <!-- Card 1: Judiciary -->
+          <div class="apple-reveal apple-glass-card p-8 rounded-3xl text-slate-900 border border-slate-200">
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center space-x-3">
+                <img src="/assets/doj-seal.png" alt="Judiciary Seal" class="h-10 w-10 object-contain drop-shadow">
+                <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">Judiciary & Courtroom Order</span>
+              </div>
+              <span class="text-xs font-bold text-doj-gold bg-slate-900 px-3 py-1 rounded-full">Pillar I</span>
+            </div>
+            <h4 class="text-2xl font-bold font-serif text-slate-900 mb-3">Supreme Court & Trial Bench</h4>
+            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+              Ensuring fair trials, issuing search and arrest warrants, enforcing Courtroom Decorum regulations, and conducting independent bail reviews.
+            </p>
+            <div class="flex items-center justify-between border-t border-slate-200/60 pt-4">
+              <span class="text-xs font-semibold text-slate-500">State of San Andreas Judiciary</span>
+              <a href="/rules" class="text-xs font-bold text-slate-900 hover:text-doj-gold">View Rules →</a>
+            </div>
+          </div>
+
+          <!-- Card 2: District Attorney -->
+          <div class="apple-reveal apple-glass-card p-8 rounded-3xl text-slate-900 border border-slate-200">
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center space-x-3">
+                <img src="/assets/da-logo.webp" alt="District Attorney Logo" class="h-10 w-10 object-contain drop-shadow">
+                <span class="text-xs font-bold text-red-700 uppercase tracking-wider">Prosecutorial Excellence</span>
+              </div>
+              <span class="text-xs font-bold text-red-100 bg-red-900 px-3 py-1 rounded-full">Pillar II</span>
+            </div>
+            <h4 class="text-2xl font-bold font-serif text-slate-900 mb-3">District Attorney's Office</h4>
+            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+              Investigating organized crime, filing formal grand jury indictments, establishing charging guidelines, and representing the State of San Andreas.
+            </p>
+            <div class="flex items-center justify-between border-t border-slate-200/60 pt-4">
+              <span class="text-xs font-semibold text-slate-500">District Attorney Division</span>
+              <a href="/staff" class="text-xs font-bold text-red-800 hover:underline">Meet Prosecutors →</a>
+            </div>
+          </div>
+
+          <!-- Card 3: Public Defender & State Bar -->
+          <div class="apple-reveal apple-glass-card p-8 rounded-3xl text-slate-900 border border-slate-200">
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center space-x-3">
+                <img src="/assets/public-attorney-logo.png" alt="Public Defender Logo" class="h-10 w-10 object-contain drop-shadow">
+                <span class="text-xs font-bold text-teal-800 uppercase tracking-wider">6th Amendment Rights</span>
+              </div>
+              <span class="text-xs font-bold text-teal-100 bg-teal-900 px-3 py-1 rounded-full">Pillar III</span>
+            </div>
+            <h4 class="text-2xl font-bold font-serif text-slate-900 mb-3">Public Defender & State Bar</h4>
+            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+              Guaranteeing constitutional defense for indigent defendants and enforcing ethical standards across licensed private trial attorneys.
+            </p>
+            <div class="flex items-center justify-between border-t border-slate-200/60 pt-4">
+              <span class="text-xs font-semibold text-slate-500">Public Defender Division</span>
+              <a href="/rules" class="text-xs font-bold text-teal-900 hover:underline">Bar Ethics →</a>
+            </div>
+          </div>
+
+          <!-- Card 4: Penal Code & LSPD Synergy -->
+          <div class="apple-reveal apple-glass-card p-8 rounded-3xl text-slate-900 border border-slate-200">
+            <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center space-x-3">
+                <img src="/assets/lspd-logo.png" alt="LSPD Seal" class="h-10 w-10 object-contain drop-shadow">
+                <span class="text-xs font-bold text-amber-800 uppercase tracking-wider">Law Enforcement Synergy</span>
+              </div>
+              <span class="text-xs font-bold text-amber-900 bg-amber-200 px-3 py-1 rounded-full">Pillar IV</span>
+            </div>
+            <h4 class="text-2xl font-bold font-serif text-slate-900 mb-3">Interactive Charge Calculator</h4>
+            <p class="text-slate-600 text-sm leading-relaxed mb-6">
+              Empowering law enforcement officers and trial lawyers with real-time fine calculation, sentence estimation, and one-click charge strings.
+            </p>
+            <div class="flex items-center justify-between border-t border-slate-200/60 pt-4">
+              <span class="text-xs font-semibold text-slate-500">Law Enforcement Operations</span>
+              <a href="/penal-codes" class="text-xs font-bold text-amber-900 hover:underline">Launch Calculator →</a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Department Divisions Banner -->
+  <section class="container mx-auto px-6 pt-16">
+    <div class="text-center mb-8">
+      <h3 class="text-2xl sm:text-3xl font-bold font-serif text-slate-900 mb-2">Department Divisions & Legal Entities</h3>
+      <p class="text-slate-600 text-sm">Official seal designations of the San Andreas Legal & Judicial Branches.</p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+      <div class="doj-card p-6 flex flex-col items-center justify-center">
+        <img src="/assets/doj-seal.png" alt="Judiciary Seal" class="h-20 w-20 object-contain mb-3 drop-shadow">
+        <h4 class="font-serif font-bold text-slate-900 text-base">Judiciary</h4>
+        <p class="text-xs text-slate-500 mt-1">Presiding Justices & Supreme Court</p>
+      </div>
+
+      <div class="doj-card p-6 flex flex-col items-center justify-center">
+        <img src="/assets/da-logo.webp" alt="District Attorney Logo" class="h-20 w-20 object-contain mb-3 drop-shadow">
+        <h4 class="font-serif font-bold text-slate-900 text-base">District Attorney</h4>
+        <p class="text-xs text-slate-500 mt-1">Prosecutorial Operations</p>
+      </div>
+
+      <div class="doj-card p-6 flex flex-col items-center justify-center">
+        <img src="/assets/public-attorney-logo.png" alt="Public Defender Logo" class="h-20 w-20 object-contain mb-3 drop-shadow">
+        <h4 class="font-serif font-bold text-slate-900 text-base">Public Defender</h4>
+        <p class="text-xs text-slate-500 mt-1">Indigent Defense Counsel</p>
+      </div>
+
+      <div class="doj-card p-6 flex flex-col items-center justify-center">
+        <img src="/assets/sanandreaslogo.png" alt="State of San Andreas Seal" class="h-20 w-20 object-contain mb-3 drop-shadow">
+        <h4 class="font-serif font-bold text-slate-900 text-base">San Andreas Bar</h4>
+        <p class="text-xs text-slate-500 mt-1">State Bar Licensing & Ethics</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Grid -->
+  <main class="container mx-auto px-6 py-16 flex-1 space-y-16">
+
+    <!-- Primary Services Cards (Vector SVG icons instead of emojis) -->
+    <section>
+      <div class="text-center mb-10">
+        <h3 class="text-2xl sm:text-3xl font-bold font-serif text-slate-900 mb-2">Centralized Portals & Services</h3>
+        <p class="text-slate-600">Access official repositories for citizens, attorneys, and law enforcement officers.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <a href="/penal-codes" class="doj-card p-6 group">
+          <div class="w-12 h-12 bg-red-100 text-red-700 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+            <span class="material-icons text-2xl">gavel</span>
+          </div>
+          <h4 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-doj-gold transition-colors">Penal Code Database</h4>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">Complete criminal code with fines, jail sentences, and the interactive Charge Calculator.</p>
+          <span class="text-xs font-bold text-doj-gold inline-flex items-center">Open Database →</span>
+        </a>
+
+        <a href="/rules" class="doj-card p-6 group">
+          <div class="w-12 h-12 bg-amber-100 text-amber-800 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+            <span class="material-icons text-2xl">description</span>
+          </div>
+          <h4 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-doj-gold transition-colors">Rules & Bar Standards</h4>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">Courtroom decorum guidelines, attorney ethics, bail release standards, and warrant rules.</p>
+          <span class="text-xs font-bold text-doj-gold inline-flex items-center">View Regulations →</span>
+        </a>
+
+        <a href="/staff" class="doj-card p-6 group">
+          <div class="w-12 h-12 bg-blue-100 text-blue-800 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+            <span class="material-icons text-2xl">account_balance</span>
+          </div>
+          <h4 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-doj-gold transition-colors">Staff & Judiciary Directory</h4>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">Leadership directory of Judges, District Attorneys, Public Defenders, and Bar members.</p>
+          <span class="text-xs font-bold text-doj-gold inline-flex items-center">Meet the Department →</span>
+        </a>
+
+        <a href="/memorandums" class="doj-card p-6 group">
+          <div class="w-12 h-12 bg-purple-100 text-purple-800 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+            <span class="material-icons text-2xl">assignment</span>
+          </div>
+          <h4 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-doj-gold transition-colors">Executive Memorandums</h4>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">Official legal directives, apprehend guidance, and prosecutorial advisories.</p>
+          <span class="text-xs font-bold text-doj-gold inline-flex items-center">Read Directives →</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- Active Dockets & Warrant Registry Section -->
+    <section class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div class="lg:col-span-2 space-y-6">
+        <div class="flex items-center justify-between">
+          <div>
+            <h3 class="text-2xl font-bold font-serif text-slate-900">Active Court Dockets</h3>
+            <p class="text-slate-500 text-sm">Scheduled trials & judicial hearings in San Andreas courts.</p>
+          </div>
+          <a href="/documents" class="text-sm font-semibold text-doj-gold hover:underline">View All Filings</a>
+        </div>
+
+        <div id="dockets-container" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <!-- Populated by /js/dockets.js -->
+        </div>
+      </div>
+
+      <div class="space-y-6">
+        <div>
+          <h3 class="text-2xl font-bold font-serif text-slate-900">Active Bench Warrants</h3>
+          <p class="text-slate-500 text-sm">Public judicial arrest orders in effect.</p>
+        </div>
+
+        <div id="warrants-container" class="space-y-3">
+          <!-- Populated by /js/dockets.js -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+<%- include('partials/footer') %>

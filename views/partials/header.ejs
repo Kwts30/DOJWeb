@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= typeof title !== 'undefined' ? title : 'Los Santos Department of Justice' %></title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="icon" type="image/png" href="/assets/doj-seal.png">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="/js/core.js" defer></script>
+  <% if (typeof script !== 'undefined') { %>
+    <script src="<%= script %>" defer></script>
+  <% } %>
+  <% if (typeof extraScript !== 'undefined') { %>
+    <script src="<%= extraScript %>" defer></script>
+  <% } %>
+</head>
+<body class="min-h-screen flex flex-col bg-slate-50 font-sans text-slate-800 <%= typeof bodyClass !== 'undefined' ? bodyClass : '' %>">
+
+  <!-- Fixed Floating Liquid Glass Header -->
+  <header class="fixed top-4 left-0 right-0 z-50 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full transition-all duration-300">
+    <div class="liquid-glass rounded-full px-6 py-3 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <a href="/" class="flex items-center space-x-3.5 group">
+        <img src="/assets/doj-seal.png" alt="DOJ Seal" class="h-11 w-11 group-hover:scale-105 transition-transform duration-300 drop-shadow-md">
+        <div>
+          <h1 class="text-base sm:text-lg font-bold tracking-tight font-serif text-white group-hover:text-doj-gold transition-colors leading-tight">
+            DEPARTMENT OF JUSTICE
+          </h1>
+          <p class="text-[10px] text-slate-300 font-medium tracking-widest uppercase">State of San Andreas</p>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Pill Bar with Slide Animations -->
+      <nav class="hidden lg:flex items-center space-x-1 liquid-glass-inner p-1.5 rounded-full">
+        <a href="/" class="nav-slide-pill px-4 py-1.5 rounded-full text-xs font-semibold <%= activePage === 'home' ? 'nav-slide-active' : 'text-slate-200 hover:text-white' %>">Home</a>
+        <a href="/penal-codes" class="nav-slide-pill px-4 py-1.5 rounded-full text-xs font-semibold <%= activePage === 'penal-codes' ? 'nav-slide-active' : 'text-slate-200 hover:text-white' %>">Penal Codes</a>
+        <a href="/rules" class="nav-slide-pill px-4 py-1.5 rounded-full text-xs font-semibold <%= activePage === 'rules' ? 'nav-slide-active' : 'text-slate-200 hover:text-white' %>">Rules & Bar</a>
+        <a href="/staff" class="nav-slide-pill px-4 py-1.5 rounded-full text-xs font-semibold <%= activePage === 'staff' ? 'nav-slide-active' : 'text-slate-200 hover:text-white' %>">Staff Directory</a>
+        <a href="/documents" class="nav-slide-pill px-4 py-1.5 rounded-full text-xs font-semibold <%= activePage === 'documents' ? 'nav-slide-active' : 'text-slate-200 hover:text-white' %>">Forms & Dockets</a>
+        <a href="/memorandums" class="nav-slide-pill px-4 py-1.5 rounded-full text-xs font-semibold <%= activePage === 'memorandums' ? 'nav-slide-active' : 'text-slate-200 hover:text-white' %>">Memorandums</a>
+      </nav>
+
+      <!-- Right Actions -->
+      <div class="flex items-center space-x-3">
+        <img src="/assets/city-seal.webp" alt="City Seal" class="h-9 w-9 hidden sm:block drop-shadow">
+        
+        <button onclick="document.getElementById('global-search-modal')?.classList.remove('hidden')" class="hidden md:flex items-center space-x-2 px-3.5 py-1.5 bg-slate-800/60 border border-white/20 hover:border-doj-gold text-slate-200 hover:text-white rounded-full text-xs font-medium transition-all shadow-inner">
+          <svg class="w-3.5 h-3.5 text-doj-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+          <span>Search</span>
+          <kbd class="px-1.5 py-0.5 bg-slate-950/80 border border-slate-700 rounded-md text-[9px] text-slate-400">⌘K</kbd>
+        </button>
+
+        <button id="menu-toggle" class="lg:hidden p-2.5 rounded-full bg-slate-800/80 text-white hover:bg-slate-700 transition-colors" aria-label="Toggle Menu">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-backdrop" class="fixed inset-0 bg-slate-950/80 z-50 hidden backdrop-blur-sm"></div>
+  <nav id="mobile-menu" class="fixed top-0 right-0 h-full w-80 bg-slate-900 text-white z-50 transform translate-x-full transition-transform duration-300 shadow-2xl p-6 flex flex-col justify-between">
+    <div>
+      <div class="flex items-center justify-between mb-8 pb-4 border-b border-slate-800">
+        <div class="flex items-center space-x-3">
+          <img src="/assets/doj-seal.png" alt="DOJ Seal" class="h-10 w-10">
+          <div>
+            <h3 class="font-serif font-bold text-lg text-white">DEPARTMENT OF JUSTICE</h3>
+            <p class="text-xs text-slate-400">State of San Andreas</p>
+          </div>
+        </div>
+        <button id="menu-close" class="p-2 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <div class="space-y-2">
+        <a href="/" class="block px-4 py-3 rounded-xl font-semibold <%= activePage === 'home' ? 'bg-slate-800 text-doj-gold font-bold' : 'text-slate-300 hover:bg-slate-800 hover:text-white' %>">Home</a>
+        <a href="/penal-codes" class="block px-4 py-3 rounded-xl font-semibold <%= activePage === 'penal-codes' ? 'bg-slate-800 text-doj-gold font-bold' : 'text-slate-300 hover:bg-slate-800 hover:text-white' %>">Penal Codes</a>
+        <a href="/rules" class="block px-4 py-3 rounded-xl font-semibold <%= activePage === 'rules' ? 'bg-slate-800 text-doj-gold font-bold' : 'text-slate-300 hover:bg-slate-800 hover:text-white' %>">Rules & Bar</a>
+        <a href="/staff" class="block px-4 py-3 rounded-xl font-semibold <%= activePage === 'staff' ? 'bg-slate-800 text-doj-gold font-bold' : 'text-slate-300 hover:bg-slate-800 hover:text-white' %>">Staff Directory</a>
+        <a href="/documents" class="block px-4 py-3 rounded-xl font-semibold <%= activePage === 'documents' ? 'bg-slate-800 text-doj-gold font-bold' : 'text-slate-300 hover:bg-slate-800 hover:text-white' %>">Forms & Dockets</a>
+        <a href="/memorandums" class="block px-4 py-3 rounded-xl font-semibold <%= activePage === 'memorandums' ? 'bg-slate-800 text-doj-gold font-bold' : 'text-slate-300 hover:bg-slate-800 hover:text-white' %>">Memorandums</a>
+      </div>
+    </div>
+
+    <div class="text-center border-t border-slate-800 pt-4">
+      <p class="text-xs text-slate-500">© 2025 State of San Andreas DOJ</p>
+    </div>
+  </nav>

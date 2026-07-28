@@ -1,0 +1,74 @@
+<%- include('partials/header', { title: 'Executive Memorandums | Department of Justice', activePage: 'memorandums' }) %>
+
+  <!-- Title Banner (Extends behind Liquid Glass Header) -->
+  <section class="bg-slate-900 text-white pt-28 pb-10 border-b border-slate-800">
+    <div class="container mx-auto px-6">
+      <div class="max-w-3xl">
+        <div class="flex items-center space-x-3 mb-2">
+          <img src="/assets/sanandreaslogo.png" alt="San Andreas Seal" class="h-6 w-6">
+          <span class="text-doj-gold text-xs font-bold uppercase tracking-widest">Official Directives Archive</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-bold font-serif mb-3">Executive & Prosecutorial Memorandums</h2>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+          Binding administrative orders, law enforcement apprehension directives, and prosecution guidelines issued by the Judiciary and District Attorney.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content Grid -->
+  <main class="container mx-auto px-6 py-10 flex-1 space-y-6">
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <!-- Directive Card 1 -->
+      <a href="/memorandums/DOJ-SC-001-apprehension-directive" class="doj-card p-6 flex flex-col justify-between group">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-bold text-doj-gold font-mono">DOJ-SC-001</span>
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-purple-100 text-purple-800">Judicial Directive</span>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-doj-gold transition-colors">Supreme Court Apprehension Directive</h3>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">Mandatory protocols regarding high-risk apprehension, arrest warrant execution, and suspect detention.</p>
+        </div>
+        <div class="border-t border-slate-100 pt-4 flex items-center justify-between text-xs text-slate-500 font-semibold">
+          <span>Issuing Body: Supreme Court</span>
+          <span class="text-doj-gold">Read Full Memo →</span>
+        </div>
+      </a>
+
+      <!-- Directive Card 2 -->
+      <a href="/memorandums/DA-2025-002-drug-prosecution-guidelines" class="doj-card p-6 flex flex-col justify-between group">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-bold text-doj-gold font-mono">DA-2025-002</span>
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-red-100 text-red-800">DA Policy</span>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-doj-gold transition-colors">Drug Prosecution Guidelines</h3>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">Standardized charging thresholds for narcotics possession versus distribution offenses.</p>
+        </div>
+        <div class="border-t border-slate-100 pt-4 flex items-center justify-between text-xs text-slate-500 font-semibold">
+          <span>Issuing Body: District Attorney</span>
+          <span class="text-doj-gold">Read Full Memo →</span>
+        </div>
+      </a>
+
+      <!-- Directive Card 3 -->
+      <a href="/memorandums/JD-2025-001-facial-coverings-directive" class="doj-card p-6 flex flex-col justify-between group">
+        <div>
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-bold text-doj-gold font-mono">JD-2025-001</span>
+            <span class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-blue-100 text-blue-800">Court Regulation</span>
+          </div>
+          <h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-doj-gold transition-colors">Facial Coverings Directive</h3>
+          <p class="text-slate-600 text-sm leading-relaxed mb-4">Policy regulating masks, helmets, and identity-obscuring apparel within court premises.</p>
+        </div>
+        <div class="border-t border-slate-100 pt-4 flex items-center justify-between text-xs text-slate-500 font-semibold">
+          <span>Issuing Body: Judicial Council</span>
+          <span class="text-doj-gold">Read Full Memo →</span>
+        </div>
+      </a>
+    </div>
+
+  </main>
+
+<%- include('partials/footer') %>

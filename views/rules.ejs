@@ -1,0 +1,73 @@
+<%- include('partials/header', { title: 'Rules & Bar Regulations | Department of Justice', activePage: 'rules', script: '/js/data/rules-data.js', extraScript: '/js/rules.js' }) %>
+
+  <!-- Title Banner (Extends behind Liquid Glass Header) -->
+  <section class="bg-slate-900 text-white pt-28 pb-10 border-b border-slate-800">
+    <div class="container mx-auto px-6">
+      <div class="max-w-3xl">
+        <div class="flex items-center space-x-3 mb-2">
+          <img src="/assets/sanandreaslogo.png" alt="San Andreas Seal" class="h-6 w-6">
+          <span class="text-doj-gold text-xs font-bold uppercase tracking-widest">Judicial Standards & Legal Ethics</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-bold font-serif mb-3">Court Rules & Bar Regulations</h2>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+          Official court decorum guidelines, attorney licensing rules, pre-trial release standards, search warrant procedures, and evidence conduct.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Search & Filter Controls -->
+  <section class="bg-white border-b border-slate-200 py-6 sticky top-[80px] z-30 shadow-sm">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="relative w-full md:w-96">
+        <input id="rules-search-input" type="text" placeholder="Search rules (e.g. decorum, bar license, bail)..." class="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-doj-gold">
+        <svg class="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+      </div>
+
+      <div class="w-full md:w-auto">
+        <select id="rules-category-filter" class="px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium text-slate-700 focus:outline-none">
+          <option value="all">All Categories</option>
+          <option value="court">Court Decorum</option>
+          <option value="bar">Bar Rules & Ethics</option>
+          <option value="bail">Bail & Release</option>
+          <option value="warrants">Warrants & Subpoenas</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rules Grid -->
+  <main class="container mx-auto px-6 py-10 flex-1">
+    <div id="rules-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Populated dynamically by /js/rules.js -->
+    </div>
+  </main>
+
+  <!-- Interactive Rule Modal Viewer -->
+  <div id="rule-modal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white w-full max-w-4xl max-h-[90vh] rounded-2xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden">
+      <div class="p-6 bg-slate-900 text-white flex items-center justify-between border-b border-slate-800">
+        <div>
+          <span id="modal-rule-category" class="text-xs font-bold text-doj-gold uppercase tracking-wider">CATEGORY</span>
+          <h3 id="modal-rule-title" class="text-2xl font-bold font-serif text-white mt-0.5">Rule Title</h3>
+        </div>
+        <button onclick="closeRuleModal()" class="p-2 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <div id="modal-rule-tabs" class="p-3 bg-slate-50 border-b border-slate-200 flex items-center space-x-2 overflow-x-auto">
+        <!-- Rendered by /js/rules.js -->
+      </div>
+
+      <div id="modal-rule-content" class="p-6 overflow-y-auto flex-1 font-body-doj text-lg">
+        <!-- Rendered by /js/rules.js -->
+      </div>
+
+      <div class="p-4 bg-slate-50 border-t border-slate-200 text-right">
+        <button onclick="closeRuleModal()" class="px-6 py-2 bg-slate-900 text-white font-bold text-xs rounded-xl hover:bg-slate-800">Close Viewer</button>
+      </div>
+    </div>
+  </div>
+
+<%- include('partials/footer') %>

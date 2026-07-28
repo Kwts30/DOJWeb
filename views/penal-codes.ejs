@@ -1,0 +1,125 @@
+<%- include('partials/header', { title: 'Penal Codes & Charge Calculator | Department of Justice', activePage: 'penal-codes', script: '/js/penal-codes.js', bodyClass: 'pb-32' }) %>
+
+  <!-- Title Banner (Extends behind Liquid Glass Header) -->
+  <section class="bg-slate-900 text-white pt-28 pb-10 border-b border-slate-800">
+    <div class="container mx-auto px-6">
+      <div class="max-w-3xl">
+        <div class="flex items-center space-x-3 mb-2">
+          <img src="/assets/sanandreaslogo.png" alt="San Andreas Seal" class="h-6 w-6">
+          <span class="text-doj-gold text-xs font-bold uppercase tracking-widest">State of San Andreas Criminal Code</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-bold font-serif mb-3">Penal Code Database & Charge Calculator</h2>
+        <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+          Search criminal codes by title, offense level, or keyword. Add charges to the live <strong>Charge Calculator</strong> below to synthesize total fines, jail time, and copy indictment strings for police reports.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Filter & Search Controls -->
+  <section class="bg-white border-b border-slate-200 py-6 sticky top-[80px] z-30 shadow-sm">
+    <div class="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="relative w-full md:w-96">
+        <input 
+          id="pc-search-input" 
+          type="text" 
+          placeholder="Search by code (e.g. PC 301, Murder, Speeding)..." 
+          class="w-full pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm focus:outline-none focus:border-doj-gold focus:ring-1 focus:ring-doj-gold"
+        >
+        <svg class="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+      </div>
+
+      <div class="flex items-center space-x-3 w-full md:w-auto">
+        <select id="pc-category-filter" class="px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium text-slate-700 focus:outline-none">
+          <option value="all">All Titles (Title 1 - 6)</option>
+          <option value="title1">Title 1 - State Sovereignty</option>
+          <option value="title2">Title 2 - Public Servant</option>
+          <option value="title3">Title 3 - Crimes Against Persons</option>
+          <option value="title4">Title 4 - Crimes Against Property</option>
+          <option value="title5">Title 5 - Firearms & Narcotics</option>
+          <option value="title6">Title 6 - Traffic & Motor Vehicles</option>
+        </select>
+
+        <select id="pc-severity-filter" class="px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-sm font-medium text-slate-700 focus:outline-none">
+          <option value="all">All Severities</option>
+          <option value="felony">Felony</option>
+          <option value="misdemeanor">Misdemeanor</option>
+          <option value="infraction">Infraction</option>
+        </select>
+      </div>
+    </div>
+  </section>
+
+  <!-- Speed Limits Reference Card Grid -->
+  <section class="container mx-auto px-6 pt-8 pb-4">
+    <div class="bg-gradient-to-r from-slate-900 to-slate-800 rounded-2xl p-6 text-white mb-8 border border-slate-700 shadow-lg">
+      <h3 class="font-serif text-lg font-bold mb-4 text-doj-gold flex items-center space-x-2">
+        <span class="inline-flex items-center"><span class="material-icons text-doj-gold text-xl align-middle mr-1">directions_car</span> State Speed Limit Regulations</span>
+      </h3>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+        <div class="bg-slate-800/80 p-4 rounded-xl border border-slate-700">
+          <span class="text-xs font-bold text-red-400 block uppercase">Freeway</span>
+          <span class="text-2xl font-black text-white">120 <span class="text-xs font-normal">MPH</span></span>
+        </div>
+        <div class="bg-slate-800/80 p-4 rounded-xl border border-slate-700">
+          <span class="text-xs font-bold text-amber-400 block uppercase">Highway</span>
+          <span class="text-2xl font-black text-white">70 <span class="text-xs font-normal">MPH</span></span>
+        </div>
+        <div class="bg-slate-800/80 p-4 rounded-xl border border-slate-700">
+          <span class="text-xs font-bold text-yellow-400 block uppercase">City Streets</span>
+          <span class="text-2xl font-black text-white">45 <span class="text-xs font-normal">MPH</span></span>
+        </div>
+        <div class="bg-slate-800/80 p-4 rounded-xl border border-slate-700">
+          <span class="text-xs font-bold text-emerald-400 block uppercase">Residential</span>
+          <span class="text-2xl font-black text-white">30 <span class="text-xs font-normal">MPH</span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Penal Code Cards Grid -->
+  <main class="container mx-auto px-6 flex-1">
+    <div id="penal-code-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Populated dynamically by /js/penal-codes.js -->
+    </div>
+  </main>
+
+  <!-- Sticky Bottom Interactive Charge Calculator Bar -->
+  <div id="charge-calculator" class="fixed bottom-0 left-0 right-0 z-40 bg-slate-900 text-white border-t border-doj-gold/40 shadow-2xl p-4">
+    <div class="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center space-x-6 w-full md:w-auto">
+        <div class="flex items-center space-x-3">
+          <span id="calc-count" class="w-8 h-8 rounded-full bg-doj-gold text-slate-950 font-bold text-sm flex items-center justify-center">0</span>
+          <div>
+            <span class="text-xs text-slate-400 font-medium block">SELECTED CHARGES</span>
+            <span class="text-xs text-slate-300 font-semibold">Active Arrest Record</span>
+          </div>
+        </div>
+
+        <div class="h-8 w-px bg-slate-700"></div>
+
+        <div>
+          <span class="text-xs text-slate-400 font-medium block">TOTAL FINE</span>
+          <span id="calc-total-fine" class="text-lg font-bold text-emerald-400">$0</span>
+        </div>
+
+        <div class="h-8 w-px bg-slate-700"></div>
+
+        <div>
+          <span class="text-xs text-slate-400 font-medium block">TOTAL SENTENCE</span>
+          <span id="calc-total-time" class="text-lg font-bold text-amber-400">0 Mins</span>
+        </div>
+      </div>
+
+      <div class="flex items-center space-x-3 w-full md:w-auto justify-end">
+        <button onclick="copyChargeString()" class="px-5 py-2.5 bg-doj-gold hover:bg-amber-400 text-slate-950 font-bold text-xs rounded-xl transition-all shadow-md flex items-center space-x-2">
+          <span class="inline-flex items-center"><svg class="w-4 h-4 text-slate-950 inline mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"/></svg> Copy Indictment String</span>
+        </button>
+        <button onclick="clearCalculator()" class="px-4 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold text-xs rounded-xl border border-slate-700">
+          Clear All
+        </button>
+      </div>
+    </div>
+  </div>
+
+<%- include('partials/footer') %>
