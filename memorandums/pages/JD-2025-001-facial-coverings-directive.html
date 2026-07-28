@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIRECTIVE ON FACIAL COVERINGS - Los Santos Department of Justice</title>
+    <meta name="description" content="Judicial directive issued to clarify and reinforce the imperative for unobstructed facial identification within public and government establishments in Los Santos.">
+    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="../memorandums.css">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="../../assets/doj-seal.png">
+    <link rel="apple-touch-icon" href="../../assets/doj-seal.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'doj-brown': '#2c1810',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen flex flex-col bg-gray-50">
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-doj-brown to-[#2c1810] text-white shadow-lg relative">
+        <div class="container mx-auto px-6 py-6">
+            <div class="flex items-center justify-between">
+                <!-- Left Spacer -->
+                <div class="w-16"></div>
+                
+                <!-- Center Content - Logos and Department Info -->
+                <div class="flex items-center justify-center space-x-6">
+                    <img src="../../assets/doj-seal.png" alt="Department of Justice Seal" class="h-20 w-20 hover:scale-105 transition-transform duration-300 drop-shadow-lg">
+                    <div class="text-center">
+                        <h1 class="text-2xl md:text-4xl font-bold mb-1 tracking-tight font-serif">DEPARTMENT OF JUSTICE</h1>
+                        <p class="text-sm md:text-lg text-gray-200 font-medium">City of Los Santos | State of San Andreas</p>
+                    </div>
+                    <img src="../../assets/city-seal.webp" alt="City of Los Santos Seal" class="h-20 w-20 hover:scale-105 transition-transform duration-300 drop-shadow-lg">
+                </div>
+                
+                <!-- Right - Hamburger Menu -->
+                <div class="relative">
+                    <button class="p-3 rounded-lg hover:bg-white/10 transition-all duration-300 group" id="menu-toggle" aria-label="Open menu">
+                        <div class="hamburger-icon">
+                            <span class="hamburger-line"></span>
+                            <span class="hamburger-line"></span>
+                            <span class="hamburger-line"></span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation Menu -->
+        <nav class="fixed top-0 right-0 h-full w-80 bg-gradient-to-b from-doj-brown to-[#1a0f08] transform translate-x-full transition-transform duration-300 z-50 shadow-2xl" id="mobile-menu">
+            <div class="p-6">
+                <!-- Menu Header -->
+                <div class="flex items-center justify-between mb-8">
+                    <div class="flex items-center space-x-3">
+                        <img src="../../assets/doj-seal.png" alt="DOJ Seal" class="h-12 w-12">
+                        <div>
+                            <h3 class="text-lg font-bold text-white font-serif">DOJ</h3>
+                            <p class="text-xs text-gray-300">Los Santos</p>
+                        </div>
+                    </div>
+                    <button class="p-2 rounded-lg hover:bg-white/10 transition-colors" id="menu-close" aria-label="Close menu">
+                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                
+                <!-- Navigation Links -->
+                <div class="space-y-2">
+                    <a href="../../index.html" class="menu-link flex items-center space-x-3 px-4 py-4 rounded-xl text-white hover:bg-white/10 transition-all duration-300 group">
+                        <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"/>
+                        </svg>
+                        <span class="font-semibold">Home</span>
+                    </a>
+                    <a href="../memorandums.html" class="menu-link active flex items-center space-x-3 px-4 py-4 rounded-xl text-white hover:bg-white/10 transition-all duration-300 group">
+                        <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="font-semibold">Memorandums</span>
+                    </a>
+                    <a href="../../penal-codes.html" class="menu-link flex items-center space-x-3 px-4 py-4 rounded-xl text-white hover:bg-white/10 transition-all duration-300 group">
+                        <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="font-semibold">Penal Codes</span>
+                    </a>
+                    <a href="../../rules.html" class="menu-link flex items-center space-x-3 px-4 py-4 rounded-xl text-white hover:bg-white/10 transition-all duration-300 group">
+                        <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"/>
+                        </svg>
+                        <span class="font-semibold">Rules</span>
+                    </a>
+                    <a href="../../staff.html" class="menu-link flex items-center space-x-3 px-4 py-4 rounded-xl text-white hover:bg-white/10 transition-all duration-300 group">
+                        <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z"/>
+                        </svg>
+                        <span class="font-semibold">Staff</span>
+                    </a>
+                </div>
+                
+                <!-- Menu Footer -->
+                <div class="absolute bottom-6 left-6 right-6">
+                    <div class="border-t border-white/20 pt-4">
+                        <p class="text-xs text-gray-400 text-center">Department of Justice</p>
+                        <p class="text-xs text-gray-500 text-center">Los Santos | San Andreas</p>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        
+        <!-- Overlay -->
+        <div class="fixed inset-0 bg-black/50 opacity-0 invisible transition-all duration-300 z-40" id="menu-overlay"></div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        <!-- Breadcrumb -->
+        <nav class="bg-gray-100 py-4" aria-label="Breadcrumb">
+            <div class="container mx-auto px-6">
+                <ol class="flex items-center space-x-2 text-sm">
+                    <li><a href="../../index.html" class="text-doj-brown hover:text-[#2c1810] transition-colors">Home</a></li>
+                    <li class="text-gray-400">/</li>
+                    <li><a href="../memorandums.html" class="text-doj-brown hover:text-[#2c1810] transition-colors">Memorandums</a></li>
+                    <li class="text-gray-400">/</li>
+                    <li class="text-gray-600">Facial Coverings Directive</li>
+                </ol>
+            </div>
+        </nav>
+
+        <!-- Document Header -->
+        <section class="bg-white border-b border-gray-200 py-8">
+            <div class="container mx-auto px-6">
+                <div class="flex items-start justify-between">
+                    <div class="flex-1">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                                Policy
+                            </span>
+                            <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-red-100 text-red-800">
+                                High Priority
+                            </span>
+                        </div>
+                        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-serif">
+                            DIRECTIVE ON FACIAL COVERINGS FOR ENHANCED PUBLIC SAFETY AND IDENTIFICATION IN PUBLIC AND GOVERNMENT ESTABLISHMENTS
+                        </h1>
+                        <div class="flex flex-wrap items-center gap-4 text-sm text-gray-600">
+                            <div class="flex items-center space-x-2">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>May 30, 2025</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>The Honorable Kawatskie Delos Reyes, Chief Justice</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 110 2h-3a1 1 0 01-1-1v-2a1 1 0 00-1-1H9a1 1 0 00-1 1v2a1 1 0 01-1 1H4a1 1 0 110-2V4z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>JD-2025-001</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex space-x-2">
+                        <button onclick="window.print()" class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition-colors">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
+                            </svg>
+                            Print
+                        </button>
+                        <button onclick="shareMemorandum()" class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 transition-colors">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.367 2.684 3 3 0 00-5.367-2.684z"/>
+                            </svg>
+                            Share
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Document Content -->
+        <section class="py-12 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto">
+                    <div class="bg-white rounded-lg shadow-lg p-8 border border-gray-200">
+                        <div class="prose prose-lg max-w-none">
+                            <div class="official-header mb-6 p-4 bg-gray-50 border-l-4 border-blue-500">
+                                <div class="flex items-center mb-2">
+                                    <img src="../../assets/doj-seal.png" alt="DOJ Seal" class="h-12 w-12 mr-3">
+                                    <div>
+                                        <h2 class="text-lg font-bold text-doj-brown">DEPARTMENT OF JUSTICE</h2>
+                                        <p class="text-sm text-gray-600">STATE OF SAN ANDREAS</p>
+                                        <p class="text-xs text-gray-500">CITY OF LOS SANTOS | ROCKFORD HILLS, CITY HALL</p>
+                                    </div>
+                                </div>
+                                <div class="mt-4 text-sm">
+                                    <p><strong>IN THE SUPERIOR COURT OF LOS SANTOS JUDICIAL DISTRICT OF SAN ANDREAS</strong></p>
+                                    <p><strong>JUDICIAL DIRECTIVE</strong></p>
+                                    <p><strong>ISSUED BY THE OFFICE OF THE CHIEF JUSTICE</strong></p>
+                                    <p class="mt-2"><strong>DATE:</strong> May 30, 2025</p>
+                                </div>
+                            </div>
+
+                            <h3 class="text-xl font-bold text-center mb-6 text-blue-600">DIRECTIVE ON FACIAL COVERINGS FOR ENHANCED PUBLIC SAFETY AND IDENTIFICATION IN PUBLIC AND GOVERNMENT ESTABLISHMENTS</h3>
+                            
+                            <div class="mb-6">
+                                <p><strong>TO:</strong> All Law Enforcement Agencies, Public and Private Security Services, and Operators of Public and Government Establishments within the Jurisdiction of Los Santos.</p>
+                                <p class="mt-2"><strong>FROM:</strong> The Honorable Kawatskie Delos Reyes, Chief Justice, Superior Court of Los Santos</p>
+                            </div>
+                            
+                            <h4 class="font-bold mb-3">I. PURPOSE OF THIS DIRECTIVE</h4>
+                            <p class="mb-4">This Judicial Directive is issued to clarify and reinforce the imperative for unobstructed facial identification within public and government establishments in Los Santos. The Court recognizes the paramount importance of public safety, the deterrence of illicit activities, and the efficient administration of justice, all of which are significantly aided by the clear identification of individuals in public spaces. This Directive aims to provide guidance on the reasonable expectation of facial visibility while respecting legitimate exceptions.</p>
+                            
+                            <h4 class="font-bold mb-3">II. DEFINITIONS FOR THE APPLICATION OF THIS DIRECTIVE</h4>
+                            <p class="mb-2">For the purposes of this Directive:</p>
+                            <ul class="list-disc pl-6 mb-4">
+                                <li><strong>A. "Facial Covering":</strong> Any item, garment, or material worn over the face that substantially obscures the full facial features (eyes, nose, mouth, and chin) of an individual, thereby impeding clear identification. This specifically includes, but is not limited to, ski masks, balaclavas, costume masks, or any non-medical mask designed to conceal identity.</li>
+                                <li><strong>B. "Public Establishment":</strong> Any commercial, recreational, or service-oriented building or facility, or portion thereof, accessible to the general public (e.g., retail stores, banks, entertainment venues, private transportation hubs).</li>
+                                <li><strong>C. "Government Establishment":</strong> Any building or facility, or portion thereof, owned or operated by the City of Los Santos, the State of San Andreas, or the Federal Government, where public services are rendered or official functions are conducted (e.g., courthouses, city halls, public libraries, government offices).</li>
+                                <li><strong>D. "Surgical Mask":</strong> A standard, loose-fitting, disposable medical mask primarily designed to create a barrier against respiratory droplets.</li>
+                            </ul>
+
+                            <h4 class="font-bold mb-3">III. DIRECTIVE PROVISIONS</h4>
+                            <p class="mb-4">Effective immediately, all individuals entering public and government establishments within Los Santos are required to maintain visible facial features that allow for clear identification. This directive establishes the following provisions:</p>
+                            
+                            <h5 class="font-semibold mb-2">A. General Prohibition</h5>
+                            <p class="mb-4">No person shall enter or remain in any public or government establishment while wearing facial coverings that substantially obscure their identity, including but not limited to ski masks, balaclavas, full-face masks, or any other covering designed to conceal facial features.</p>
+                            
+                            <h5 class="font-semibold mb-2">B. Permitted Exceptions</h5>
+                            <p class="mb-2">The following exceptions are recognized as legitimate and shall be permitted:</p>
+                            <ul class="list-disc pl-6 mb-4">
+                                <li>Medical masks worn for health purposes, provided they do not fully obscure facial identification</li>
+                                <li>Religious coverings that maintain visibility of the eyes and do not prevent identification</li>
+                                <li>Protective equipment required for occupational safety</li>
+                                <li>Weather-related coverings that are temporarily worn and removed upon entry</li>
+                            </ul>
+
+                            <h4 class="font-bold mb-3">IV. ENFORCEMENT AND COMPLIANCE</h4>
+                            <p class="mb-4">All law enforcement officers, security personnel, and establishment operators are authorized and directed to enforce this directive. Individuals who refuse to comply with identification requirements may be subject to removal from the premises and appropriate legal action.</p>
+                            
+                            <h4 class="font-bold mb-3">V. EFFECTIVE DATE</h4>
+                            <p class="mb-4">This Directive shall take effect immediately upon issuance and shall remain in full force and effect until further order of this Court.</p>
+                            
+                            <div class="mt-8 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                                <p class="text-sm font-medium text-blue-900">ISSUED UNDER THE AUTHORITY OF THE SUPERIOR COURT OF LOS SANTOS</p>
+                                <p class="text-sm text-blue-800 mt-2">The Honorable Kawatskie Delos Reyes<br>Chief Justice, Superior Court of Los Santos</p>
+                                <p class="text-xs text-blue-600 mt-2">Date: May 30, 2025</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gradient-to-r from-doj-brown to-[#1a0f08] text-white">
+        <div class="container mx-auto px-6 py-12">
+            <!-- Main Footer Content -->
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- Department Info -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-4 mb-6">
+                        <img src="../../assets/doj-seal.png" alt="DOJ Seal" class="h-16 w-16">
+                        <div>
+                            <h3 class="text-xl font-bold font-serif text-white">Department of Justice</h3>
+                            <p class="text-[#feeaba] text-sm">City of Los Santos | State of San Andreas</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300 text-sm leading-relaxed max-w-md">
+                        Dedicated to upholding justice, protecting rights, and ensuring fair application of the law 
+                        within Los Santos. Serving our community with integrity, transparency, and accountability.
+                    </p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4 font-serif">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="../../index.html" class="text-gray-300 hover:text-[#feeaba] transition-colors text-sm">Home</a></li>
+                        <li><a href="../memorandums.html" class="text-gray-300 hover:text-[#feeaba] transition-colors text-sm">Memorandums</a></li>
+                        <li><a href="../../penal-codes.html" class="text-gray-300 hover:text-[#feeaba] transition-colors text-sm">Penal Codes</a></li>
+                        <li><a href="../../rules.html" class="text-gray-300 hover:text-[#feeaba] transition-colors text-sm">Rules</a></li>
+                        <li><a href="../../staff.html" class="text-gray-300 hover:text-[#feeaba] transition-colors text-sm">Staff Directory</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact & Connect -->
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4 font-serif">Connect With Us</h4>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-4 h-4 text-[#feeaba]" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="text-gray-300 text-sm">Los Santos, San Andreas</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <svg class="w-4 h-4 text-[#feeaba]" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/>
+                                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/>
+                            </svg>
+                            <span class="text-gray-300 text-sm">info@losdoj.gov</span>
+                        </div>
+                        <div class="mt-4">
+                            <a href="https://discord.gg/YC8HVgnjbH" class="inline-flex items-center space-x-2 bg-white/10 hover:bg-white/20 rounded-lg px-3 py-2 transition-colors">
+                                <img src="../../assets/Discord-icon.png" alt="Discord" class="w-7 h-5" />
+                                <span class="text-sm text-white">Join Our Discord</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom Bar -->
+            <div class="border-t border-white/20 pt-6">
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                    <div class="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6 text-sm text-gray-400">
+                        <p>&copy; 2025 Department of Justice, Los Santos. All Rights Reserved.</p>
+                        <span class="hidden md:block">|</span>
+                        <p>Property of KWTS</p>
+                    </div>
+                    <div class="flex items-center space-x-4 text-sm text-gray-400">
+                        <a href="#" class="hover:text-[#feeaba] transition-colors">Privacy Policy</a>
+                        <span>|</span>
+                        <a href="#" class="hover:text-[#feeaba] transition-colors">Terms of Service</a>
+                        <span>|</span>
+                        <a href="#" class="hover:text-[#feeaba] transition-colors">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../main.js"></script>
+    <script>
+        function shareMemorandum() {
+            const url = window.location.href;
+            const title = "DIRECTIVE ON FACIAL COVERINGS FOR ENHANCED PUBLIC SAFETY AND IDENTIFICATION";
+            
+            if (navigator.share) {
+                navigator.share({
+                    title: title,
+                    text: `Check out this memorandum from the Los Santos Department of Justice: ${title}`,
+                    url: url
+                });
+            } else {
+                navigator.clipboard.writeText(url).then(() => {
+                    alert('Link copied to clipboard!');
+                }).catch(() => {
+                    prompt('Copy this link:', url);
+                });
+            }
+        }
+    </script>
+</body>
+</html>
